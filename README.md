@@ -12,7 +12,7 @@ Link: https://arquivo-tartaro.byethost12.com/
 - JS
 
 ## Features
-- Two disciplines: "Eletrônica Analógica" (Analogic Eletronics) & "Programação" (Programming).
+- Two disciplines: "Eletrônica Analógica" (Analog Eletronics) & "Programação" (Programming).
 - Circuit simulation using `Falstad` web tool.
 - Diagrams using `Mermaid` language.
 - Inline and block equations using `LaTeX` language suported by `MathJax`.
