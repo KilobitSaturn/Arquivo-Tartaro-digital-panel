@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `b12_39920726_biblioteca_tartara`
+-- Banco de dados: `biblioteca_tartara`
 --
 
 -- --------------------------------------------------------
