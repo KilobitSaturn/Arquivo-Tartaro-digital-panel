@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <script type="text/javascript" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+    <title>O formato de arquivo de som WAVE PCM (.wav)</title>
+</head>
+<body>
+    <h1>O formato de arquivo de som WAVE PCM (.wav)</h1>
+    <p style="text-align: center;"><a href="../programacao.php">Programação</a></p>
+    <main>
+        <h2>Noções de Pulsação Codificada Modular (PCM)</h2>
+        <p>A Pulsação Codificada Modular (PCM) é um método usado para representar digitalmente amostras de sinais analógicos. A magnitude do sinal analógico é mostrada regularmente em intervalos uniformes, com cada amostra a ser quantizada para o valor mais próximo dentro de um intervalo de passos digitais.</p>
+        <h2>O Cabeçalho WAVE canônico</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Ordem \(\left(n\right)\)</th>
+                    <th>Número de Bytes \(\left(n_\text{By}\right)\)</th>
+                    <th>Somatório de Bytes \(\left(\sum n_\text{By}\right)\)</th>
+                    <th>Identificador do Campo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>ChunkID</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>8</td>
+                    <td>ChunkSize</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>12</td>
+                    <td>Format</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>16</td>
+                    <td>Subchunk1ID</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>20</td>
+                    <td>Subchunk1Size</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>2</td>
+                    <td>22</td>
+                    <td>AudioFormat</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>2</td>
+                    <td>24</td>
+                    <td>NumChannels</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>4</td>
+                    <td>28</td>
+                    <td>SampleRate</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>32</td>
+                    <td>ByteRate</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>2</td>
+                    <td>34</td>
+                    <td>BlockAlign</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>2</td>
+                    <td>36</td>
+                    <td>BitsPerSample</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>40</td>
+                    <td>Subchunk2ID</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>4</td>
+                    <td>44</td>
+                    <td>Subchunk2Size</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>(variável)</td>
+                    <td>-</td>
+                    <td>Data</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>O descritor da seção "RIFF"</h2>
+        <p>O formato em questão é denominado por "WAVE", contendo dois subblocos: "fmt " e "data".</p>
+        <ul>
+            <li>ChunkID: Contém a palavra "RIFF" em formato ASCII.</li>
+            <li>ChunkSize: Este é o tamanho do restante do bloco após este número, isto é, este é o tamanho de todo o arquivo em bytes menos 8 bytes - correspondente aos dois campos não incluídos nesta contagem: ChunkID e ChunkSize. Por também ser definido por: \(36 + \text{SubChunk2Size}\), ou mais precisamente:
+\(4 + (8 + \text{SubChunk1Size}) + (8 +\text{SubChunk2Size})\)</li>
+            <li>Format: Contém a palavra "WAVE" para indicar o formato de arquivo.</li>
+        </ul>
+        <h2>A sub-seção "fmt "</h2>
+        <p>Descreve o formato das informações de som na sub-seção "data".</p>
+        <ul>
+            <li>Subchunk1ID: Contém as letras "fmt ".</li>
+            <li>Subchunk1Size: Este é o tamanho do resto do Subchunk que segue este número. Se for 16, indica <abbr title="Pulsação Codificada Modular">PCM</abbr></li>
+            <li>AudioFormat: Se este valor for um, indica quantização linear (<abbr title="Pulsação Codificada Modular">PCM</abbr>) Valores diferentes de 1 indicam alguma forma de compressão.</li>
+            <li>NumChannels: 1 para Mono, 2 para Estéreo, etc.</li>
+            <li>SampleRate: Taxa de amostragem na leitura do sinal. Pode ser 8000, 44100, etc.</li>
+            <li>ByteRate: Taxa de amostragem para bytes. \(\text{ByteRate} = \text{SampleRate} \times \text{NumChannels} \times
+\frac {\text{BitsPerSample}} 8\)</li>
+            <li>BlockAlign: O número de bytes incluídos em uma amostra, contando todos os canais.</i>(O que acontece quando esse número não é um número inteiro?)</i> É definido por: \(\text{BlockAlign} = \text{NumChannels} \times \frac {\text{BitsPerSample}} 8\)</li>
+            <li>BitsPerSample: Número de bits para cada amostra: 8 bits = 8, 16 bits = 16, etc.</li>
+        </ul>
+        <h2>A sub-seção "data"</h2>
+        <p>Indica o tamanho das informações de som e contém os dados brutos de som.</p>
+        <ul>
+            <li>Subchunk2ID: Contém a palavra "data".</li>
+            <li>Subchunk2Size: Este é o número de bytes nos dados. Você também pode pensar nisso como o tamanho da leitura da subseção que segue este número. É definido por: \(\text{Subchunk2Size} = \text{NumSamples}\times\text{NumChannels} \times \frac {\text{BitsPerSample}} 8\).</li>
+            <li>Data: Os dados das amostras de som propriamente dito.</li>
+        </ul>
+    </main>
+    <footer>
+        <hr>
+        <a href="../programacao.php">Programação</a>
+    </footer>
+</body>
+</html>

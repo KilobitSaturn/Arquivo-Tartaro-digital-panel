@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../index.css">
+  <title>Método da Substituição de Fontes Reais</title>
+</head>
+
+<body style="text-align:center; line-height:1.6;">
+
+  <h1>Método da Substituição de Fontes Reais</h1>
+
+  <hr>
+
+  <h2>1) Conceito</h2>
+  <p>Quando um circuito contém várias fontes (de tensão e corrente), podemos simplificá-lo substituindo uma ou mais fontes por suas equivalentes.  
+  Esse processo é chamado de <strong>Método da Substituição de Fontes Reais Equivalentes</strong>.</p>
+
+  <p>O objetivo é tornar o circuito mais simples de analisar, sem alterar o comportamento elétrico sobre a carga.</p>
+
+  <hr>
+
+  <h2>2) Passos do Método</h2>
+  <p>1) Identifique as grandezas a determinar (tensão e/ou corrente).</p>
+  <p>2) Localize o resistor onde essas grandezas serão calculadas.  
+  Esse resistor não pode ser usado como resistência interna (r<sub>i</sub>) de nenhuma fonte.</p>
+  <p>3) Verifique qual fonte pode ser trocada pela sua equivalente e realize a substituição.</p>
+  <p>4) Simplifique o circuito passo a passo até poder calcular a corrente e a tensão desejadas.</p>
+
+  <hr>
+
+  <h2>3) Exemplo Prático</h2>
+  <p>Inicialmente temos uma <strong>fonte real de corrente</strong> (2 mA) com sua resistência interna (1 kΩ) em paralelo, e uma carga de 1,5 kΩ conectada ao circuito.</p>
+  
+  <img src="img/circuitoeqv1p.png" style="filter:invert(1);">
+  <p>Sabemos que uma fonte real de corrente pode ser substituída pela sua <strong>fonte real de tensão equivalente</strong>.  
+  Aplicando a relação <strong>V = I × r<sub>i</sub></strong>, temos: V = 2 mA × 1 kΩ = 2 V.</p>
+
+  <p>Essa tensão de 2 V representa a nova fonte equivalente, que substituirá a fonte de corrente e sua resistência interna em paralelo.</p>
+
+  <img src="img/circuitoeqv3p.png" style="filter:invert(1);">
+  <p>Após a substituição, a nova fonte de 2 V fica <strong>em série</strong> com o resistor de 1 kΩ (que antes era o r<sub>i</sub> da fonte de corrente).  
+  Agora temos apenas fontes de tensão no circuito.</p>
+
+  <img src="img/circuitoeqv4p.png" style="filter:invert(1);">
+  <p>Em seguida, somamos algebricamente as tensões, respeitando seus sinais (polaridades):  
+  +20 V e -2 V → V<sub>eq</sub> = 18 V.</p>
+
+  <img src="img/circuitoeqv5p.png" style="filter:invert(1);">
+  <p>Com a nova tensão equivalente (18 V), o circuito agora contém apenas resistores em série, tornando possível o cálculo direto da corrente e da tensão sobre a carga.</p>
+
+  <img src="img/circuitoeqv6p.png" style="filter:invert(1);">
+  <p style="font-family:monospace;">
+    I<sub>RL</sub> = 18 / (1500 + 1000) = 7,2 mA<br>
+    V<sub>RL</sub> = I<sub>RL</sub> × 1500 = 10,8 V
+  </p>
+
+  <p>Assim, a substituição da fonte real de corrente por sua equivalente de tensão simplifica o circuito sem alterar o comportamento elétrico sobre a carga.</p>
+
+  <hr>
+
+  <h2>4) Observação Final</h2>
+  <p>O método da substituição é uma ferramenta poderosa para simplificar circuitos com múltiplas fontes.  
+  Ele mantém o comportamento elétrico original do circuito e facilita a aplicação das Leis de Kirchhoff.</p>
+
+  <p>O uso correto da resistência interna (r<sub>i</sub>) é fundamental para que as substituições sejam válidas e mantenham o mesmo efeito sobre a carga.</p>
+
+  <hr>
+  <p><a href="../eletronica_analogica.php">Voltar para Eletrônica Analógica</a></p>
+
+</body>
+</html>

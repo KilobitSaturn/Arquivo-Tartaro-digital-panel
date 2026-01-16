@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/* Estrutura principal */
+
+main {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: calc(100vw - 200px);
+    width: 100%;
+}
+
+figure {
+    width: 100%;
+    height: 40vh; /* altura proporcional à tela */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1, h2, h3{
+    font-family: 'Raleway';
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h3{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+a {
+    color: rgb(45, 153, 100);
+}
+
+/* Código */
+
+pre > code {
+  background-color: #111111;
+  display: block;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+pre.mermaid{
+  display: flex;
+  justify-content: center;
+}
+
+/* Recados */
+
+blockquote {
+    text-align: justify;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #111111;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Recados das Faces*/
+
+blockquote.face{
+    section {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        gap: 20px;
+        overflow: hidden;
+        .retrato{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            img{
+                border-radius: 100%;
+                object-fit: contain;
+                margin: 0 auto;
+                max-width: 240px;
+            }
+        }
+        h2{
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .subtitulo{
+            margin-bottom: 20px;
+        }
+    }
+}
+/* Cards das Disciplinas*/
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    .card-disciplina {
+        border: 2px solid #131313;
+        border-radius: 10px;
+        flex: 1 1 200px;  /* cresce e quebra automático */
+        height: 200px;
+        max-width: 250px;
+        background-color: #1c1c1c;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        .titulo {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            text-align: center;
+            font-family: 'Raleway', sans-serif;
+            color: white;
+        }
+        figure{
+            flex: 4;
+            display: flex;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    
+}
+
+/* Tabelas */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    th{
+        text-align: left;
+    	border-bottom: 2px solid #ffffff;
+    	padding: 10px;
+    }
+    td{
+        background-color: #131313;
+    	border-bottom: 2px solid #000000;
+    	padding: 10px;
+    }
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+hr {
+    margin-bottom: 20px;
+}
+
+/* Responsividade */
+
+/* Tablet */
+@media (max-width: 768px) {
+    main{
+        max-width: 100%;
+    }
+    blockquote.face section {
+        grid-template-columns: 1fr;
+        h2, .subtitulo{
+            text-align: center;
+        }
+    }
+    figure{
+        height: 30vh;
+    }
+}
+
+/* Celular*/
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+    section .card-disciplina {
+        flex: 1 1 100%;  /* ocupa largura inteira */
+        max-width: 100%;
+    }
+    figure{
+        height: 25vh;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+}

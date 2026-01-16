@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Leis de Kirchhoff</title>
+</head>
+
+<body style="text-align: center;line-height: 1.6;">
+
+    <h1>Leis de Kirchhoff</h1>
+
+    <hr>
+
+    <h2>1) Lei de Kirchhoff para Correntes (LKC) — Lei dos Nós</h2>
+
+    <p>
+        Nó é o ponto de ligação de componentes. Ou seja, é o ponto onde dois ou mais componentes se encontram (ponto azul).
+    </p>
+
+    <img src="img/no5.png" width="300" style="filter: invert(1);">
+
+    <h3>Definição:</h3>
+    <p>A soma algébrica das correntes que se encontram em um nó é <strong>zero (0)</strong>.</p>
+    <p>
+        Soma algébrica está relacionada com o sinal positivo ou negativo associado ao sentido da corrente.
+    </p>
+
+    <h3>Regra de Sinal (adotada):</h3>
+    <ul>
+        <li>Corrente que <strong>entra no nó</strong> recebe sinal <strong>positivo (+)</strong>.</li>
+        <li>Corrente que <strong>sai do nó</strong> recebe sinal <strong>negativo (-)</strong>.</li>
+    </ul>
+
+    <hr>
+
+    <h2>2) Lei de Kirchhoff para Tensões (LKT) — Lei das Malhas</h2>
+
+    <p>Malha é o caminho fechado no circuito.</p>
+
+    <h3>Definição:</h3>
+    <p>
+        A soma algébrica das tensões em um caminho fechado, percorrido num circuito, é igual a
+        <strong>zero (0)</strong>.
+    </p>
+
+    <p>
+        A soma algébrica está relacionada à polaridade da tensão sobre o componente quando a malha é percorrida.
+    </p>
+
+    <h3>Regra de Sinal (adotada):</h3>
+    <p>Quando passamos por um componente:</p>
+
+    <ul>
+        <li>
+            Se o deslocamento é do <strong>negativo (-)</strong> para o <strong>positivo (+)</strong>,
+            a tensão é <strong>somada</strong>.
+        </li>
+        <li>
+            Se o deslocamento é do <strong>positivo (+)</strong> para o <strong>negativo (-)</strong>,
+            a tensão é <strong>subtraída</strong>.
+        </li>
+    </ul>
+
+    <hr>
+
+    <h3>Caminho Fechado (Malha):</h3>
+    <p>
+        A aplicação da lei exige que definamos um caminho fechado de investigação, permitindo que comecemos em um
+        ponto qualquer no circuito, nos desloquemos através dele e encontremos nosso caminho de volta até o ponto de
+        partida original.
+    </p>
+
+    <p>
+        O caminho não precisa ser circular, quadrado ou ter qualquer outra forma definida; ele tem de simplesmente
+        fornecer uma maneira de sair de um ponto e voltar a ele sem deixar o circuito.
+    </p>
+
+    <hr>
+
+    <h2>Exemplos de Aplicação (Resultados dos Cálculos):</h2>
+
+      <h2>Exemplo 1 — Malha Simples</h2>
+    <p>Em um circuito com uma fonte de <strong>16 V</strong> e duas quedas conhecidas de <strong>4,2 V</strong> e <strong>9 V</strong>, calcular a tensão desconhecida <strong>V₁</strong>.</p>
+
+    <img src="img/malhasimplesp.png" style="filter:invert(1);">
+
+    <p><strong>Aplicando a LKT:</strong></p>
+    <p style="text-align:left; display:inline-block;">
+        +16 − 4,2 − 9 − V₁ = 0<br>
+        16 − 13,2 − V₁ = 0<br>
+        V₁ = 2,8 V
+    </p>
+    <p><strong>Resposta:</strong> A queda de tensão desconhecida é de <strong>2,8 V</strong>.</p>
+
+    <hr>
+    
+    <h2>Exemplo 2 — Aplicação da LKT em Malhas com Fontes de Tensão</h2>
+
+<p>Considere o circuito abaixo, com três malhas e várias fontes de tensão.</p>
+
+	<img src="img/malha2p.png" style="filter:invert(1);">
+
+<p>Aplicando a <strong>Lei de Kirchhoff das Tensões (LKT)</strong> em cada malha, temos:</p>
+
+	<h3>Malha 1:</h3>
+<p style="text-align:left; display:inline-block;">
+    +40&nbsp;V&nbsp;+&nbsp;50&nbsp;V&nbsp;−&nbsp;20&nbsp;V&nbsp;−&nbsp;V₁&nbsp;=&nbsp;0<br>
+    V₁&nbsp;=&nbsp;70&nbsp;V
+</p>
+
+	<h3>Malha 2:</h3>
+<p style="text-align:left; display:inline-block;">
+    +20&nbsp;V&nbsp;−&nbsp;30&nbsp;V&nbsp;+&nbsp;V₂&nbsp;=&nbsp;0<br>
+    V₂&nbsp;=&nbsp;10&nbsp;V
+</p>
+
+	<h3>Malha 3:</h3>
+<p style="text-align:left; display:inline-block;">
+    +70&nbsp;V&nbsp;−&nbsp;10&nbsp;V&nbsp;−&nbsp;V₃&nbsp;=&nbsp;0<br>
+    V₃&nbsp;=&nbsp;60&nbsp;V
+</p>
+
+<p style="margin-top:20px;">
+    <strong>Conclusão:</strong> Cada malha obedece à Lei das Tensões de Kirchhoff (ΣV = 0).<br>
+    Assim, os valores obtidos são: V₁ = 70&nbsp;V, V₂ = 10&nbsp;V e V₃ = 60&nbsp;V.
+</p>
+
+<hr>
+
+
+    <h3>Cálculo de Tensão em Pontos (em relação ao GND)</h3>
+    <img src="img/malha3p.png" style="filter:invert(1);">
+    <p>Para um circuito com R<sub>eq</sub> = 10 kΩ e I<sub>T</sub> = 1 mA:</p>
+    <ul>
+        <li>Tensão no ponto A: V<sub>A</sub> = 5 V</li>
+        <li>Tensão no ponto B: V<sub>B</sub> = 3 V (Valor deduzido dos resistores e corrente)</li>
+        <li>Tensão no ponto C: V<sub>C</sub> = 1 V</li>
+        <li>Lembrando que todos os pontos são em relação ao terra(GND), ou seja teremos que V<sub>A</sub> = 2V+2V+1V</li>
+    </ul>
+
+    <a href="../eletronica_analogica.php">Eletrônica Analógica</a>
+
+</body>
+</html>

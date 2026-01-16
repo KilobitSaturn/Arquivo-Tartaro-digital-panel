@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../index.css">
+  <title>Teorema de Thevenin</title>
+</head>
+
+<body style="text-align:center; line-height:1.6;">
+
+  <h1>Teorema de Thevenin</h1>
+
+  <hr>
+
+  <h2>1) Conceito</h2>
+  <p>O Teorema de Thevenin permite substituir qualquer circuito linear e bilateral por um circuito equivalente simples, formado por uma fonte de tensão V<sub>th</sub> (tensão de Thevenin) em série com uma resistência R<sub>th</sub> (resistência de Thevenin).</p>
+
+  <img src="img/th1p.png" style="filter:invert(1);">
+
+  <p>Esse circuito fornece o mesmo efeito elétrico (mesma corrente e tensão) sobre a carga R<sub>L</sub> que o circuito original.</p>
+    <p>Ou seja ele é um método para facilitar apenas o cálculo de uma carga R<sub>L</sub> que você deseja.
+
+  <hr>
+
+  <h2>2) Determinação de R<sub>th</sub></h2>
+  <p>A resistência equivalente de Thevenin (R<sub>th</sub>) é obtida observando o circuito pelos terminais onde se conecta a carga R<sub>L</sub>, com todas as fontes desativadas e a carga removida.</p>
+
+  <p><strong>Passos:</strong></p>
+  <p>1. Retirar a carga R<sub>L</sub>, deixando o circuito aberto entre os pontos a e b.</p>
+  <p>2. Desativar todas as fontes:</p>
+  <p>&nbsp;&nbsp;• Fontes de tensão → substituir por curto-circuito.</p>
+  <p>&nbsp;&nbsp;• Fontes de corrente → substituir por circuito aberto.</p>
+  <p>3. Calcular a resistência equivalente entre os pontos a e b:</p>
+  <p>R<sub>eq</sub> = R<sub>th</sub></p>
+
+  <img src="img/th2p.png" style="filter:invert(1);">
+    <br>
+  <img src="img/th3p.png" style="filter:invert(1); ">
+
+  <hr>
+
+  <h2>3) Determinação de V<sub>th</sub></h2>
+  <p>A tensão de Thevenin (V<sub>th</sub>) é a tensão medida entre os pontos a e b com a carga R<sub>L</sub> removida e todas as fontes ativas.</p>
+
+  <p><strong>Passos:</strong></p>
+  <p>1. Retirar a carga R<sub>L</sub>.</p>
+  <p>2. Ativar todas as fontes (mantendo as tensões e correntes originais).</p>
+  <p>3. Medir ou calcular a tensão entre os pontos a e b:</p>
+  <p>V<sub>th</sub> = V<sub>oc</sub> (tensão de circuito aberto)</p>
+
+  <img src="img/th4p.png" style="filter:invert(1);">
+    <br>
+  <img src="img/th5p.png" style="filter:invert(1);">
+
+  <hr>
+
+  <h2>4) Exemplo Prático</h2>
+  <p>Determinar o circuito equivalente de Thevenin entre os pontos a e b.</p>
+
+  <p><strong>Etapas:</strong></p>
+  <p>1) Retirar a carga R<sub>L</sub>.</p>
+  <p>2) Desativar todas as fontes → calcular R<sub>th</sub>(caso tenha mais de uma fonte).</p>
+  <p>3) Ativar todas as fontes → calcular V<sub>th</sub>.</p>
+  <p>4) Montar o circuito equivalente de Thevenin.</p>
+
+  <img src="img/exemploth1p.png" style="filter:invert(1);">
+  <br>
+  <img src="img/exemploth2p.png" style="filter:invert(1);">
+
+  <p><strong>Cálculos:</strong></p>
+  <p>R<sub>th</sub> = 3k&nbsp;Ω</p>
+  <p>V<sub>th</sub> = 12&nbsp;V(própria fonte, pois só tinha uma fonte).</p>
+
+  <p>O circuito equivalente é formado por uma fonte de 12&nbsp;V em série com uma resistência de 3k&nbsp;Ω, ligada à carga R<sub>L</sub>.</p>
+  <p><strong>O circuito equivalente de norton está previsto na parte de fontes equivalentes!!</strong><p>
+
+  <hr>
+  <hr>
+
+  <p><a href="../eletronica_analogica.php">Eletrônica Analógica</a></p>
+
+</body>
+</html>

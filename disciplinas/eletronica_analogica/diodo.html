@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../index.css">
+  <title>Diodo em Circuitos DC</title>
+</head>
+
+<body style="text-align: center;line-height: 1.6;">
+
+    <h1>Diodo em Circuitos DC</h1>
+	
+    <p>
+      O diodo é um dos componentes eletrônicos mais fundamentais e está presente em praticamente todos os circuitos.
+      Ele permite que a corrente elétrica passe em apenas um sentido — do anodo (a) para o catodo (k).
+    </p>
+
+    <h2>Diodo retificador ou de sinal em circuito DC</h2>
+    <p>
+      O circuito mais simples que utiliza um diodo (retificador ou de sinal) é composto por uma fonte de tensão contínua (DC),
+      um resistor e o diodo ligados em série.
+    </p>
+    <p>
+      Como o diodo tem terminais diferentes (anodo e catodo), ele pode ser ligado de duas maneiras:
+      <br>1) Polarização direta
+      <br>2) Polarização inversa
+    </p>
+
+    <h3>1) Polarização Direta</h3>
+    <p>
+      Quando o anodo está conectado ao polo positivo da fonte e o catodo ao polo negativo,
+      o diodo está <strong>polarizado diretamente</strong> e conduz corrente elétrica.
+    </p>
+    <p>
+      A tensão sobre o diodo é dada por:
+      <br>Vd = Vak
+    </p>
+    <p>
+      Isso significa que ligamos a ponteira vermelha do multímetro no anodo (a) e a preta no catodo (k).  
+      Se o anodo estiver em potencial mais positivo, o diodo conduzirá corrente.
+    </p>
+
+    <p>
+      Em um diodo de silício, a queda de tensão típica é de aproximadamente <strong>0,7 V</strong>.
+      Assim, a tensão Vak ≈ 0,7 V quando o diodo conduz.
+    </p>
+
+    <h4>Equação da Corrente:</h4>
+    <p>
+      Para haver corrente no circuito, a tensão da fonte deve ser maior que 0,7 V.
+      A corrente é limitada pelo resistor em série:
+    </p>
+    <p>
+      Id = (Vf – 0,7) / Rs
+    </p>
+    <p>
+      Por isso, sempre devemos usar um resistor em série ao ligar um diodo,
+      para limitar a corrente e evitar danos ao componente.
+    </p>
+
+    <hr>
+
+    <h3>2) Polarização Inversa</h3>
+    <p>
+      Quando o anodo está ligado ao polo negativo e o catodo ao polo positivo,
+      o diodo está <strong>polarizado inversamente</strong> e <strong>não conduz corrente elétrica</strong>.
+    </p>
+    <p>
+      Nessa condição, a tensão Vak é negativa.  
+      A barreira de potencial interna da junção PN aumenta, impedindo o movimento de cargas.
+    </p>
+    <p>
+      O diodo comporta-se como um <strong>circuito aberto</strong> — toda a tensão da fonte aparece sobre o diodo,
+      e praticamente nenhuma corrente circula. Pórem lembre-se que <strong>todo diodo possuí uma tensão de ruptura(maxíma tensão que ele aguenta inversamente)</strong> que se passar dela ele pode ser danificado(queimado).
+    </p>
+    <p>
+      Portanto:
+      <br>Id = 0
+      <br>Vrs = 0
+      <br>Vd = Vak = -Vf
+    </p>
+
+    <hr>
+
+    <h3>Resumo Importante</h3>
+    <table border="1" align="center" style="margin:auto; border-collapse: collapse;">
+      <tr>
+        <th>Condição</th>
+        <th>Comportamento</th>
+        <th>Equações</th>
+      </tr>
+      <tr>
+        <td><strong>Diodo polarizado diretamente</strong></td>
+        <td>O diodo conduz corrente elétrica.</td>
+        <td>
+          Id = (Vf – 0,7) / Rs<br>
+          Vd = 0,7 V
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Diodo polarizado inversamente</strong></td>
+        <td>O diodo não conduz corrente (comporta-se como aberto).</td>
+        <td>
+          Id = 0<br>
+          Vd = -Vf
+        </td>
+      </tr>
+    </table>
+
+    <hr>
+
+    <h2>Exemplo Prático</h2>
+    <p>
+      Considere um circuito com uma fonte de tensão contínua (Vf), um resistor Rs e um diodo de silício.
+      <br>Calcule as correntes e tensões para diferentes valores de resistência.
+    </p>
+
+    <p>
+      Exemplo: Se Rs = 100 Ω e a fonte for de 5 V:
+      <br>Id = (5 – 0,7) / 100 = 0,043 A = 43 mA<br>
+      <iframe src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgATEbBFcGmt14hMfPhwYAzAIYBXADYAXNgCchfMAJH5+gqmDhsAbtrwi8ZtGc16otKkipPoCNgHdT5szzEWo79REMPh8vfyA" width="50%" height="600px"></iframe>
+    </p>
+      
+
+    <p>
+      Se Rs for reduzido, a corrente aumenta — mas o diodo continua com Vd ≈ 0,7 V.
+      <br>É o resistor que limita a corrente no circuito.
+    </p>
+
+    <hr>
+
+    <h2>Polarização Inversa na Prática</h2>
+    <p>
+      Quando o diodo é invertido, praticamente nenhuma corrente flui.
+      A tensão da fonte aparece quase toda sobre o diodo.
+    </p>
+    <p>
+      Se a tensão inversa for muito alta (acima da tensão de ruptura), o diodo pode ser danificado permanentemente.
+    </p>
+
+    <hr>
+
+   <h2>Anotação Extra — Matrizes de Diodos</h2>
+<p>
+  As <strong>matrizes de diodos</strong> são arranjos formados por vários diodos interligados, usados principalmente para
+  <strong>representar informações binárias (0 e 1)</strong> ou controlar a passagem de sinais elétricos em pontos específicos de um circuito.
+</p>
+
+<p>
+  Elas funcionam como um “mapa” onde cada diodo representa uma <strong>ligação possível</strong> entre uma linha (entrada) e uma coluna (saída).
+  Quando há um diodo em um ponto da matriz, a corrente pode passar (representando um “1” lógico);
+  quando não há diodo, a corrente não passa (representando um “0” lógico).
+</p>
+
+<p>
+  Imagine uma tabela com linhas e colunas — como se fosse um tabuleiro de batalha naval.
+  Cada ponto de cruzamento pode ter:
+  <br>• Um diodo presente → corrente passa → sinal “1”  
+  <br>• Nenhum diodo → corrente bloqueada → sinal “0”
+</p>
+
+<p>
+  Isso é muito usado em circuitos digitais simples e em memórias antigas (ROMs de diodos), onde
+  cada diodo “soldado” em um ponto específico representava um dado gravado permanentemente.
+</p>
+    <p>Exemplo:</p>
+    <img src="img/diodop.png" style="filter:invert(1);">
+
+<p>
+  Assim, os diodos funcionam como <strong>interruptores fixos</strong> que determinam onde o sinal elétrico pode fluir.
+  Esse princípio foi a base das primeiras memórias digitais e ainda é usado em teclados de computadores e calculadoras,
+  onde cada tecla é ligada por um ou mais diodos que identificam sua posição.
+</p>
+
+<p>
+  <em>Resumindo:</em> a matriz de diodos transforma conexões elétricas em informações digitais — é como escrever com eletricidade usando 0 e 1.
+</p>
+    <hr>
+
+    <h2>Resumo Final</h2>
+    <p>
+      <strong>Diodo polarizado diretamente:</strong> conduz corrente, queda de tensão ≈ 0,7V (silício).<br>
+      <strong>Diodo polarizado inversamente:</strong> não conduz, comporta-se como circuito aberto.<br><br>
+      O resistor em série é essencial para limitar a corrente e proteger o diodo.
+    </p>
+
+    <p><a href="../eletronica_analogica.php">Eletrônica Analógica</a></p>
+</body>
+</html>

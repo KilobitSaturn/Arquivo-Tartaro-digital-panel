@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Testes Comparativo-Condicionais</title>
+</head>
+<body>
+    <script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'; mermaid.initialize({ securityLevel: 'loose', theme: 'dark', }); </script>
+    <h1>Testes Comparativo-Condicionais</h1>
+    <p style="text-align: center;"><a href="../programacao.php">Programação</a></p>
+    <main>
+        <pre><code>if (&lt;condição&gt;) //caso verdadeiro</code></pre>
+        <pre class="mermaid">
+stateDiagram
+	direction LR 
+	[*] --> condição
+	condição --> execução: verdadeiro
+	condição --> [*]: falso
+	execução --> [*]
+        </pre>
+        <pre><code>if(&lt;condição&gt;){
+	//caso verdadeiro
+}
+else {
+	//caso falso
+}</code></pre>
+        <pre class="mermaid" align="center">
+stateDiagram
+	direction LR 
+	[*] --> condição
+	condição --> caso: verdadeiro
+	condição --> senão: falso
+	caso --> [*]
+	senão: senão (else)
+	caso: execução
+        </pre>
+        <pre><code>if(&lt;condição1&gt;) {
+	//caso verdadeiro
+}
+else if(&lt;condição2&gt;) {
+	//caso verdadeiro 2
+}
+else if(&lt;condição3&gt;) {
+	//caso verdadeiro 3
+}
+else {
+	//se nenhuma das condições anteriores forem verdadeiras
+}</code></pre>
+        <pre class="mermaid" align="center">
+stateDiagram
+	direction LR 
+	[*] --> condição1
+	condição1 --> condição2: falso
+	condição2 --> condição3: falso
+	condição3 --> senão: falso
+	condição1 --> execução1: verdadeiro
+	condição2 --> execução2: verdadeiro
+	condição3 --> execução3: verdadeiro
+	execução1 --> [*]
+	execução2 --> [*]
+	execução3 --> [*]
+	senão: senão (else)
+        </pre>
+        <p>O teste <code>if</code> em si não usa <code>;</code>. A ordem de prioridade nos testes é respectiva.</p>
+    </main>
+    <footer>
+        <hr>
+        <a href="../programacao.php">Programação</a>
+    </footer>
+</body>
+</html>

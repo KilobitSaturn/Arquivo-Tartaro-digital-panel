@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Capacitores e Indutores</title>
+</head>
+<body style="text-align: center;line-height: 1.6;">
+
+
+    <h1>Componentes Eletrônicos Semicondutores</h1>
+
+    <hr>
+
+    <h2>Introdução</h2>
+    <p>São componentes eletrônicos fabricados utilizando **semicondutores extrínsecos**. O semicondutor puro (intrínseco) é alterado intencionalmente pela adição de impurezas (o processo de **dopagem**), o que permite controlar sua condutividade e criar os dois tipos básicos de materiais:</p>
+    <ul>
+        <li>**Material Tipo N:** Dopado com elementos que fornecem elétrons livres (portadores de carga **negativos**).</li>
+        <li>**Material Tipo P:** Dopado com elementos que criam "buracos" (portadores de carga **positivos**).</li>
+    </ul>
+
+    <hr>
+
+    <h2>Tipos de Componentes Semicondutores</h2>
+
+    <h3>Diodos</h3>
+    <ul>
+        <li>Diodos (retificadores, de sinal, Zener, LED)</li>
+        <li>Outros tipos: diodo túnel, diodo Gunn, diodo PIN, fotodiodo, diodo Schottky, ...</li>
+    </ul>
+
+    <h3>Transistores</h3>
+    <ul>
+        <li>Transistores bipolares (BJT - Bipolar Junction Transistor): NPN, PNP</li>
+        <li>Outros transistores: FET, MOSFET, unijunção, fototransistor, ...</li>
+    </ul>
+
+    <h3>Circuitos Integrados (CI)</h3>
+    <ul>
+        <li>Analógicos, digitais, conversores A/D e D/A</li>
+    </ul>
+
+    <hr>
+
+    <h2>Diodo Semicondutor</h2>
+    <p>Componente eletrônico com dois terminais bem definidos, formado por uma **junção PN**, que é a união de um material Tipo P (**Anodo**) com um material Tipo N (**Catodo**).</p>
+    <p>Essa junção confere ao diodo sua função de "válvula direcional" ou chave eletrônica, pois ele só conduz corrente elétrica em um sentido. Seu comportamento é determinado pela maneira como ele é polarizado no circuito DC, havendo duas condições:</p>
+    
+    <h4>Polarização Direta (Condução)</h4>
+    <p>Nesta condição, o Anodo (P) é ligado ao potencial mais positivo da fonte. Isso "desfaz" a junção e permite que a corrente flua, atuando como um circuito fechado (chave ligada), após a tensão ultrapassar a barreira de potencial (aprox. 0,7V para Silício).</p>
+    
+    <h4>Polarização Inversa (Bloqueio)</h4>
+    <p>Nesta condição, o Catodo (N) é ligado ao potencial mais positivo. Isso reforça a junção, atuando como um circuito aberto (chave desligada) e bloqueando o fluxo de corrente.</p>
+    
+    <p>Os tipos comuns incluem Diodos de silício de uso geral, Diodos SMD e Diodos de potência.</p>
+    <p>Evite falar do anodo como terminal "positivo" do diodo e catodo como terminal "negativo". Isso pode causar confusão na hora de analisar o comportamento do diodo em um circuito, pois a condução depende da relação de potencial (polarização) e não apenas da identificação dos terminais.</p>
+
+
+    <h3>Tipos a serem estudados:</h3>
+
+    <h4>1. Diodo de Sinal (ou Diodo Rápido)</h4>
+    <p>Diodo de baixa potência, construído para ter uma alta velocidade de resposta (baixo tempo de chaveamento), muito utilizado em circuitos digitais e de alta frequência para direcionamento dos sinais.</p>
+    <p>Os terminais são o **P** (anodo) e o **N** (catodo).</p>
+    <p>A flecha no símbolo indica o sentido convencional da corrente que passa pelo diodo.</p>
+
+    <h4>2. Diodo Retificador</h4>
+    <p>Diodo de média ou alta potência, utilizado para transformar um sinal AC (alternado) em DC pulsante, pois permite a passagem de apenas um semiciclo da onda AC.</p>
+    <p>Existem diodos retificadores de baixa, média e alta potência.</p>
+
+    <h4>3. Diodo Zener</h4>
+    <p>Diodo especial projetado para operar na polarização inversa. É usado como regulador de tensão, pois consegue manter uma **tensão constante** (tensão Zener) através de seus terminais, mesmo que a corrente varie.</p>
+
+    <h4>4. LED (Light Emitting Diode - Diodo Emissor de Luz)</h4>
+    <p>Diodo com capacidade de emitir luz, convertendo energia elétrica diretamente em luz quando polarizado adequadamente (polarização direta).</p>
+
+    <hr>
+
+    <h2>Polarização (Biasing)</h2>
+    <p>**Biasing** (pronuncia-se "báiasing") ou **polarização** é o estabelecimento de tensões e correntes **DC (contínuas)** predeterminadas em um componente para definir o **Ponto de Trabalho** em que o circuito opera em repouso. Se a polarização estiver incorreta, o componente não funcionará conforme o esperado (ex: um transistor pode atuar como chave ao invés de amplificador).</p>
+    <p>É o conjunto de tensões e correntes DC no circuito quando não está realizando sua função.</p>
+    <p>Praticamente todos os circuitos eletrônicos exigem uma fonte de energia DC (pilhas, baterias ou fonte de alimentação DC) para fornecer as condições de polarização.</p>
+
+    <table border="1" style="margin: 20px auto; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="padding: 8px;">O que é polarizar?</th>
+                <th style="padding: 8px;">Objetivo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 8px;">É o estabelecimento de tensões e/ou correntes DC (contínuas) predeterminadas em diferentes pontos de um circuito eletrônico.</td>
+                <td style="padding: 8px;">Dar as condições necessárias para o funcionamento adequado dos componentes eletrônicos.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Circuito de Polarização</h3>
+    <p>É o conjunto de componentes, geralmente **resistores**, que definem e limitam as correntes e/ou tensões DC de polarização.</p>
+    <p>Polarizar um componente (como transistor, diodo ou LED) é determinar as condições de trabalho através de correntes e tensões DC adequadas.</p>
+
+    <p>Quando nada funciona em um circuito é bem provável que sua fonte de energia esteja com problemas (Ex.: bateria ou pilha descarregada, defeito na fonte DC que não consegue fornecer as tensões e correntes adequadas).</p>
+     <a href="../eletronica_analogica.php">Eletrônica Analógica</a>
+
+
+</body>
+</html>

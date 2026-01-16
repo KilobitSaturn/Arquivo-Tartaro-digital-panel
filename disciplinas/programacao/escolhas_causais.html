@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Escolhas Causais</title>
+</head>
+<body>
+    <h1>Escolhas Causais</h1>
+    <p style="text-align: center;"><a href="../programacao.php">Programação</a></p>
+    <main>
+        <pre><code>switch(&lt;var&gt;){
+	case '1':
+		// código caso var seja igual ao caractere 1, e não ao valor 1;
+		break;
+	case 2:case 3:case 4:
+		// código caso var = 2, var = 3 e var = 4
+		break;
+	default:
+		// caso aplicado quando &lt;var&gt; não atende os outros casos.
+}</code></pre>
+        <ul>
+            <li>Você pode fazer casos na função <code>switch</code> usando atribuições, por exemplo: <code>switch(var + 1)</code>, <code>switch(var*10)</code>, <code>switch(var%2)</code>; e construir os casos baseado nos resultados dessas operações.</li>
+            <li>A função <code>switch</code> suporta <b>somente uma</b> variável por vez.</li>
+            <li>O caso <code>default</code> não é obrigatório.</li>
+            <li>Caso você <i>não</i> digite a função <code>break</code> no final de cada caso (exceção de <code>default</code>), todos os casos que forem menores ou iguais ao resultado serão realizados.</li>
+        </ul>
+    </main>
+    <footer>
+        <hr>
+        <a href="../programacao.php">Programação</a>
+    </footer>
+</body>
+</html>

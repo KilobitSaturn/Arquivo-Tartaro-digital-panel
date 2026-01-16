@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Manipulação de Arquivos</title>
+</head>
+<body>
+    <h1>Manipulação de Arquivos</h1>
+    <p style="text-align: center;"><a href="../programacao.php">Programação</a></p>
+    <main>
+        <h2>Noções de Arquivos</h2>
+        <p>A linguagem C não contém nenhum comando de Entrada/Saída. Ao contrário, todas as operações de E/S ocorrem mediante chamadas de biblioteca C padrão. O sistema de E/S de C é único, porque dados podem ser transferidos na sua representação binária interna ou em um formato de texto legível por humanos. Essa abordagem faz o sistema de arquivos de C extremamente poderoso e flexível.<br><br>Antes de começar a falar do sistema de arquivos C ANSI, é importante entender a diferença entre os termos <i>fluxos</i> e <i>arquivos</i>. O sistema de arquivos de C é projetado para trabalhar com uma ampla variedade de dispositivos, incluindo terminais, acionadores de disco e acionadores de fita. Embora cada um dos dispositivos seja muito diferente, o sistema de arquivo com buffer transforma-os em um dispositivo lógico chamado de <i>stream</i> ou <i>fluxo</i>.</p>
+        <h2>Fluxos</h2>
+        <p>O fluxo é uma abstração do dispositivo real chamado de arquivo. Pelo fato dos fluxos serem amplamente independentes do dispositivo, a mesma função pode escrever em um arquivo em disco ou em algum outro dispositivo, como o console. Existem dois tipos de fluxos:
+        	<ol>
+                <li><b>Texto:</b> Um fluxo de texto é uma sequência de caracteres.<ul style="padding-inline-start: 40px;">
+                    <li>O padrão C ANSI permite (mas não exige) que um fluxo de texto seja organizada em linhas terminadas por um caractere de nova linha (`\n`);</li>
+					<li>Porém, o caractere de nova linha é opcional na última linha e é determinado pela implementação;</li>
+                </ul>
+                <li><b>Binário:</b>Um fluxo binário é uma sequência de bytes com uma correspondência de um para com aqueles encontrados no dispositivo externo – isto é, não ocorre nenhuma tradução de caracteres</li>
+           </ol>
+       	</p>
+		<h2><a href="Ponteiros.html">Ponteiros</a> de Arquivo</h2>
+                    <p>Um ponteiro de arquivo é um ponteiro para uma área na memória (<i>buffer</i>) onde estão contidos vários dados sobre o arquivo a ler ou escrever, tais como o nome do arquivo, estado e posição corrente. O <i>buffer</i> apontado pelo ponteiro de arquivo é a área intermediária entre o arquivo no disco e o programa. Este <i>buffer</i> intermediário entre arquivo e programa é chamado <i>fluxo</i>, e um fluxo é uma entidade lógica genérica, que pode estar associada a uma unidade de fita magnética, um disco, uma porta serial, etc.<br><br>Um ponteiro de arquivo é uma variável-ponteiro do tipo <code>FILE</code> que é definida em <code>stdio.h</code>. Para ler ou escrever em um arquivo de disco, o programa deve declarar uma variável ponteiro de arquivo, similar as demais variáveis do programa:</p>
+       	<pre><code>FILE *fp;</code></pre>
+       	<ul>
+           <li><code>fp</code>: é o nome que escolhemos para o ponteiro de arquivo.
+    	</ul>
+    </main>
+    <footer>
+        <hr>
+        <a href="../programacao.php">Programação</a>
+    </footer>
+</body>
+</html>

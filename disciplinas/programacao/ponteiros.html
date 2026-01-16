@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Ponteiros</title>
+</head>
+<body>
+    <h1>Ponteiros</h1>
+    <p style="text-align: center;"><a href="../programacao.php">Programação</a></p>
+    <main>
+        <p>O Ponteiro é uma variável que guarda o <b>endereço</b> (<code>&amp;</code>) de outra variável. Portanto, para que serve?</p>
+        <ul>
+            <li>Evitar a utilização de variáveis globais;</li>
+            <li>Torna o código mais independente (variáveis locais), melhor para fazer manutenção;</li>
+            <li>Aproveitar espaços livres da memória; economiza, racionaliza o uso da memória;</li>
+            <li>Ao passar valores pra uma função, eu manipulo uma cópia da variável. Com ponteiros, eu posso manipular a própria variável.</li>
+        </ul>
+        <pre><code>&lt;tipo de dado&gt; *&lt;nome&gt;;
+//Ex:
+int *ptr, *pt, *p;</code></pre>
+        <h2>Operadores com Ponteiros</h2>
+        <h3>Endereço (<code>&amp;</code>)</h3>
+        <pre><code>&amp;&lt;var&gt;; //indica o endereço da memória do seu operando 'var'.
+//Ex:
+int *p, x, y;
+p = &amp;x;</pre></code>
+        <h3>Conteúdo (<code>*</code>)</h3>
+        <pre><code>&lt;var&gt; = *&lt;ptr&gt;; //a variável 'var' terá o conteúdo do ponteiro.
+//Ex:
+int *p, x, y;
+p = &amp;x; // inicialização do ponteiro.
+y = *p;</pre></code>
+        <p> Agora <code>y</code> é igual ao conteúdo do ponteiro <code>p</code>, que aponta para o endereço da variável <code>x</code>; ou seja, <code>y = x</code>.</p>
+        <h3>Incremento (<code>++</code>)</h3>
+        <pre><code>int *p, x, y;
+p = &amp;x;
+p++;
+*p = y; //p = &amp;(x+4), x+4 = ???</pre></code>
+        <p>Um ponteiro de um tipo de dado específico, ao ser incrementado, vai avançar a quantidade de endereços, em bytes, necessários para guardar aquele tipo de variável.</p>
+        <pre><code>char *char_p;
+char_p++; //O ponteiro 'char_p' avançará 1 endereço = 1 byte.
+
+int *int_p;
+int_p = &amp;&lt;var&gt;;
+int_p++; //avançará a quantidade necessária para guardar uma variável do tipo int (4 bytes = avança 4 endereços: int_p+=4)</pre></code>
+    </main>
+    <footer>
+        <hr>
+        <a href="../programacao.php">Programação</a>
+    </footer>
+</body>
+</html>

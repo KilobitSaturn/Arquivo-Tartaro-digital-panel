@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Funções em Programação</title>
+</head>
+<body>
+    <h1>Funções em Programação</h1>
+    <p style="text-align: center;"><a href="../programacao.php">Programação</a></p>
+    <main>
+        <p>Uma <b>função</b> consiste São códigos pré-programados, geralmente definidos antes da função principal. A função recebe um nome e, através desse, ela é chamada. Basicamente, a maioria da linguagem C é composta por funções. As funções são utilizadas para:</p>
+		<ul>
+            <li>Permitir o reaproveitamento de código;</li>
+            <li>Evitar a repetição de um trecho de código no <code>main()</code>;</li>
+            <li>Facilitar a correção;</li>
+            <li>Facilitar o entendimento, pois com elas os blocos não ficam grandes demais;</li>
+            <li>Separar o programa em partes (blocos); assim, o <code>main()</code> se torna um chamador de funções.</li>
+        </ul>
+        <h2>Sintaxe</h2>
+        <p>O bloco de comando que será executado dentro das funções é delimitado por chaves (<code>{}</code>).</p>
+        <pre><code>&lt;tipo de dado&gt; &lt;nome&gt;(&lt;argumento(s)&gt;, ...){
+	// código
+	return &lt;retorno&gt;;
+}</code></pre>
+        <ul>
+            <li><code>tipo de dado</code>: o tipo de dado que ela retorna ao terminar (<code>void</code>, <code>char</code>, <code>int</code>, <code>float</code>, <code>...</code>);</li>
+            <li><code>nome</code>: qualquer nome; define como se chama a função.</li>
+            <li><code>argumento(s)</code>: regras e definições atribuídos ao(s) dado(s) recebido(s) pela função. Uma função pode ter quantos argumentos forem necessários.</li>
+            <li><code>retorno</code>: definido pelo comando <code>return</code>, faz com que a função retorne um dado como resultado da operação (exceto funções do tipo <code>void</code>) ao seu término; geralmente, é a última linha do bloco de código.</li>
+        </ul>
+        <h3>Considerações</h3>
+        <ul>
+            <li>Para cada função criada, devemos ter pelo menos uma chamada da função no programa;</li>
+            <li>Uma função pode ter quantos argumentos forem necessários, mas a chamada da função deve ter o mesmo número de parâmetros, todos respectivamente na mesma ordem e do mesmo tipo;</li>
+            <li>Cada função só pode retornar um valor e a variável que o recebe deve ser do mesmo tipo do que o retorno;</li>
+            <li>Uma função pode ser declarada antes ou depois da função principal. Se for declarada depois: antes do <code>main()</code> deve ser declarado seu protótipo;</li>
+            <li>Uma função pode chamar outra função e, desta forma, a função chamada deve ser declarada antes da chamadora;</li>
+            <li>As funções podem ser declaradas dentro de um arquivo de cabeçalho do usuário, mas devem ser observados os itens acima.</li>
+        </ul>
+    </main>
+    <footer>
+        <hr>
+        <a href="../programacao.php">Programação</a>
+    </footer>
+</body>
+</html>

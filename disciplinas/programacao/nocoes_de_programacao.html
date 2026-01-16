@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Noções de Programação</title>
+    <script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'; mermaid.initialize({ securityLevel: 'loose', theme: 'dark', }); </script>
+</head>
+<body>
+    <h1>Noções de Programação</h1>
+    <p style="text-align: center;"><a href="../programacao.php">Programação</a></p>
+    <main>
+        <h2>O que é um algoritmo?</h2>
+        <p><b>Algoritmo</b> é um conjunto de instruções que descrevem como resolver um problema ou realizar uma tarefa. Eles são a base da programação de computadores, pois transformam ideias abstratas em instruções que as máquinas podem entender e executar. Os algoritmos podem ser simples, como uma receita de bolo, ou complexos, como os usados em aprendizado de máquina.</p>
+        <h3>Exemplos de Algoritmos</h3>
+        <ul>
+            <li><b>Redes sociais:</b> Selecionam conteúdos que os usuários mais gostam, de acordo com suas preferências e interações;</li>
+            <li><b>Motores de busca:</b> Classificam os resultados de pesquisa de acordo com a relevância do conteúdo, a popularidade das páginas, entre outros critérios;</li>
+            <li><b>Sistemas de navegação GPS:</b> Calculam a rota mais eficiente entre dois pontos;</li>
+            <li><b>Análise de crédito:</b> Utilizados por instituições financeiras para analisar o crédito dos clientes;</li>
+            <li><b>Diagnóstico de doenças:</b> Utilizados em medicina para analisar imagens médicas e ajudar no diagnóstico de doenças;</li>
+            <li><b>Compressão de MP3:</b> Transformam a informação bruta de uma amostra de som de alta qualidade em MP3;</li>
+            <li><b>Criptografia:</b> Protegem os dados trocados na internet de invasores.</li>
+        </ul>
+        <h2>Aplicações de um algoritmo</h2>
+        <ul>
+            <li>Desenvolvimento de aplicações em software básico;</li>
+            <li>Controle e interfaceamento.</li>
+        </ul>
+        <h3>Interpretador</h3>
+        <p>O interpretador é um algoritmo que lê a primeira instrução do programa, faz uma consistência de sua sintaxe e se não houver erro, converte-a para linguagem de máquina para executá-la.</p>
+        <pre class="mermaid" align="center">
+stateDiagram-v2
+	[*] --> Interpretador: Dados de entrada
+	Interpretador --> [*]: Dados de saída
+	Programa --> Interpretador
+   		</pre>
+        <h3>Compilador</h3>
+        <p>O algoritmo do compilador lê a primeira instrução do programa, faz uma consistência de sua sintaxe e se não houver erro, converte-a para linguagem de máquina e assim até o final do programa. Se não houver erros, o compilador gera o <code>.obj</code>.<br>Posteriormente, o ligador  junta as rotinas necessárias ao programa <code>.obj</code>, criando o <code>.exe</code>. Neste momento não é mais necessária a presença do compilador, pois todo o programa já esta traduzido para linguagem de máquina e armazenado em disco, basta rodá-lo.</p>
+        <pre class="mermaid" align="center">
+stateDiagram-v2
+	[*] --> s1: Código-Fonte
+	state "Pré-Processador" as s1
+	s1 --> s2: Código-Fonte expandido
+	state "Compilador" as s2
+	s2 --> s3: Código Assemply
+	state "Montador" as s3
+	s3 --> s4: Código-Objeto
+	state "Ligador" as s4
+	s4 --> [*]: Programação Executável
+	Biblioteca(s) --> s4
+        </pre>
+        <p>O compilador é mais rápido em tempo de execução (instante em que o programa é executado). Interpretador é mais rápido em tempo de programação (instante em que o programa é editado). Portanto, é mais conveniente desenvolver um novo programa utilizando um interpretador e o compilador é reservado para gerar a versão final do referido programa.</p>
+    </main>
+    <footer>
+        <hr>
+        <p><i>Material didático elaborado por Prof. Marco César Sauer, em Novo Hamburgo;<br>apresentado com 🦋 por Kauã Marcelino.</i></p>
+        <a href="../programacao.php">Programação</a>
+    </footer>
+</body>
+</html>

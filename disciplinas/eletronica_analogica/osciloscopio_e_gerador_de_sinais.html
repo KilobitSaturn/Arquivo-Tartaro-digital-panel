@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../index.css">
+  <title>Osciloscópio e Gerador de Funções</title>
+</head>
+
+<body style="text-align:center; line-height:1.6;">
+
+  <h1>Osciloscópio e Gerador de Funções</h1>
+
+  <hr>
+
+  <h2>1) O que é o Osciloscópio?</h2>
+  <p>O osciloscópio é o equipamento usado para <strong>visualizar sinais elétricos</strong> em forma de onda.  
+  Ele mostra na tela como a tensão muda com o tempo, permitindo analisar o comportamento real do circuito.</p>
+
+  <p>Com ele, podemos ver se o sinal é senoidal, quadrado, se está com ruído, ou se o circuito está funcionando corretamente.</p>
+
+  <img src="img/oscp.png" alt="Osciloscópio digital Tektronix TBS1052C" style="max-width:500px; border-radius:10px; margin:10px 0;">
+
+  <hr>
+
+  <h2>2) Como usar o Osciloscópio</h2>
+  <p>Para usar o osciloscópio corretamente:</p>
+  <ul style="display:inline-block; text-align:left; max-width:800px;">
+    <li>Conecte a <strong>ponta da sonda</strong> no ponto do circuito que deseja medir.</li>
+    <li>Conecte o <strong>jacaré de terra</strong> da sonda no GND do circuito.</li>
+    <li>Escolha o canal desejado (geralmente <strong>CH1</strong>).</li>
+    <li>Ajuste o botão <strong>VOLTS/DIV</strong> para ver o sinal com boa altura na tela.</li>
+    <li>Use <strong>TIME/DIV</strong> para ajustar o tempo por divisão e ver o sinal completo.</li>
+    <li>Gire o botão <strong>TRIGGER LEVEL</strong> até a forma de onda ficar parada e estável na tela.</li>
+  </ul>
+
+  <hr>
+
+  <h2>3) Principais Botões do Osciloscópio (TBS1052C)</h2>
+
+  <ul style="display:inline-block; text-align:left; max-width:800px;">
+    <li><strong>CH1 e CH2:</strong> Entradas para medir até dois sinais ao mesmo tempo.</li>
+    <li><strong>VOLTS/DIV (amarelo e azul):</strong> Ajusta a escala vertical — define o valor em volts por divisão.</li>
+    <li><strong>POSITION (vertical):</strong> Move o sinal para cima ou para baixo na tela.</li>
+    <li><strong>TIME/DIV:</strong> Controla a escala horizontal — quanto tempo vale cada divisão da tela.</li>
+    <li><strong>HORIZONTAL POSITION:</strong> Move o sinal para a esquerda ou direita.</li>
+    <li><strong>TRIGGER LEVEL:</strong> Ajusta o ponto de disparo para estabilizar o sinal.</li>
+    <li><strong>RUN/STOP:</strong> Congela o sinal na tela para análise.</li>
+    <li><strong>CURSOR:</strong> Permite medir distâncias verticais (tensão) e horizontais (tempo) entre dois pontos.</li>
+    <li><strong>MEASURE:</strong> Mede automaticamente valores como frequência, amplitude e período.</li>
+    <li><strong>AUTOSET:</strong> Configura tudo automaticamente para exibir o sinal de forma rápida.</li>
+  </ul>
+
+  <p>Esses controles são os mais usados e suficientes para visualizar e analisar qualquer sinal básico em laboratório.</p>
+
+  <hr>
+
+  <h2>4) Entendendo a Tela do Osciloscópio</h2>
+  <p>A tela é dividida em quadrados chamados <strong>divisões</strong>.  
+  O eixo vertical representa a <strong>tensão (V)</strong> e o horizontal representa o <strong>tempo (s)</strong>.</p>
+
+  <p>Exemplo: se o ajuste estiver em “2 V/div” e o sinal ocupar 3 divisões, a amplitude é de 6 V.</p>
+
+  <p>O mesmo vale para o tempo — se o controle estiver em “1 ms/div” e um ciclo ocupar 4 divisões, o período é 4 ms, e a frequência é 1 / 0,004 = 250 Hz.</p>
+
+  <hr>
+
+  <h2>5) Osciloscópio Digital</h2>
+  <p>O osciloscópio digital converte o sinal elétrico em números binários usando um <strong>conversor A/D</strong>.  
+  Isso permite pausar, salvar e analisar o sinal com precisão, além de fazer medições automáticas.</p>
+
+  <p>Os modelos digitais também possuem portas USB para salvar imagens ou dados coletados durante os testes.</p>
+
+  <hr>
+
+  <h2 style="color:red;">⚠️ Cuidados Importantes</h2>
+  <p><strong>Nunca conecte o osciloscópio diretamente à rede elétrica (110V ou 220V)!</strong></p>
+  <p>Isso pode queimar o equipamento e causar choques elétricos.  
+  Sempre meça apenas sinais de baixa tensão e use sondas isoladas quando necessário.</p>
+
+  <hr>
+
+  <h2>6) O que é o Gerador de Funções</h2>
+  <p>O gerador de funções é o equipamento usado para <strong>criar sinais elétricos</strong> de teste.  
+  Ele envia ondas senoidais, quadradas ou triangulares para testar circuitos e ver suas respostas no osciloscópio.</p>
+
+  <img src="img/geradorp.png" alt="Gerador de Funções GF-230" style="max-width:450px; border-radius:10px; margin:10px 0;">
+
+  <hr>
+
+  <h2>7) Botões do Gerador de Funções (GF-230)</h2>
+
+  <ul style="display:inline-block; text-align:left; max-width:800px;">
+    <li><strong>WAVEFORM SELECTOR:</strong> Escolhe o tipo de onda (senoidal, quadrada ou triangular).</li>
+    <li><strong>FREQUENCY:</strong> Ajusta a frequência do sinal — quanto mais alto, mais rápido o sinal se repete.</li>
+    <li><strong>AMPLITUDE:</strong> Controla o tamanho do sinal em volts (a “altura” da onda).</li>
+    <li><strong>DC OFFSET:</strong> Adiciona uma tensão contínua ao sinal (move a onda para cima ou para baixo).</li>
+    <li><strong>OUTPUT:</strong> Ativa ou desativa a saída — sem isso o gerador não envia sinal.</li>
+    <li><strong>DISPLAY:</strong> Mostra a frequência e os ajustes atuais do gerador.</li>
+  </ul>
+
+  <p>Com esses controles, você pode gerar o sinal ideal para qualquer teste de circuito.</p>
+
+  <hr>
+
+  <h2>8) Usando os dois juntos</h2>
+  <p>O gerador cria o sinal, e o osciloscópio mostra o que está acontecendo.  
+  Essa dupla é usada para testar, por exemplo, amplificadores, filtros e sensores.</p>
+
+  <ul style="display:inline-block; text-align:left; max-width:800px;">
+    <li>1. Ligue a saída do gerador no ponto de entrada do circuito.</li>
+    <li>2. Conecte a sonda do osciloscópio na saída do circuito.</li>
+    <li>3. Ajuste frequência e amplitude do gerador.</li>
+    <li>4. Observe no osciloscópio a forma de onda de saída e compare com a de entrada.</li>
+  </ul>
+
+  <p>Assim é possível ver se o circuito amplifica, atrasa ou distorce o sinal.</p>
+
+  <hr>
+
+  <h2>9) Erros Comuns</h2>
+  <ul style="display:inline-block; text-align:left; max-width:800px;">
+    <li>Não conectar o <strong>terra</strong> do osciloscópio ao GND do circuito.</li>
+    <li>Usar escalas erradas de tensão ou tempo e não enxergar o sinal na tela.</li>
+    <li>Esquecer de ativar o botão <strong>OUTPUT</strong> no gerador de funções.</li>
+    <li>Conectar os cabos invertidos e medir o ponto errado.</li>
+    <li>Deixar o <strong>TRIGGER</strong> mal ajustado e ver a forma de onda “correndo”.</li>
+  </ul>
+
+  <p>Com atenção a esses detalhes, as medições ficam claras e confiáveis.</p>
+
+  <hr>
+
+  <h2>10) Conclusão</h2>
+  <p>O osciloscópio e o gerador de funções são ferramentas essenciais na eletrônica.  
+  O gerador <strong>cria o sinal</strong> e o osciloscópio <strong>mostra o que está acontecendo</strong>.</p>
+
+  <p>Usando os dois corretamente, é possível entender o comportamento dos sinais, testar circuitos e detectar problemas de forma visual e prática.</p>
+
+  <hr>
+  <p><a href="../eletronica_analogica.php">Voltar para Eletrônica Analógica</a></p>
+
+</body>
+</html>

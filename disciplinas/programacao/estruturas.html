@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Estruturas</title>
+</head>
+<body>
+    <h1>Estruturas</h1>
+    <p style="text-align: center;"><a href="../programacao.php">Programação</a></p>
+    <main>
+        <p><q>Uma variável composta de outras variáveis de tipos distintos</q></p>
+        <h2>Declaração de uma Estrutura</h2>
+        <p>Diferentemente dos tipos de dados, os tipos de estrutura são personalizáveis, cabendo ao programador escolher quais variáveis estarão dentro deles. É necessário declarar um tipo de estrutura antes de declarar uma estrutura propriamente.</p>
+        <pre><code>struct &lt;/*nome do tipo de estrutura*/&gt; {
+	//aqui dentro vão as variáveis que já conhecemos, incluindo ponteiros e matrizes.
+	int var;
+	char *c, str[50];
+	float var1, var2;
+	double dd;
+	//...
+};</code></pre>
+        <ul>
+            <li>Todas as regras de declaração de variáveis de qualquer tipo de dado se aplicam aqui.</li>
+            <li>Note que não há como atribuir variáveis na declaração de uma <code>struct</code>, apenas declará-las.</li>
+        </ul>
+        <h2>Declaração de uma instância de Estrutura</h2>
+        <pre><code>void main(){
+	struct &lt;nome do tipo de estrutura&gt; &lt;nome da estrutura1&gt;, &lt;nome da estrutura2&gt;, ...; //cria duas estruturas distintas do mesmo tipo
+	struct &lt;nome do tipo de estrutura&gt; &lt;nome da estrutura&gt;[n]; //cria 'n' vetores de estruturas, cada uma contendo suas respectivas variáveis.
+	
+//Agora que temos uma estrutura, usamos o separador '.' para acessar suas variáveis:
+	&lt;nome da estrutura&gt;.&lt;var&gt; = 0;
+}</code></pre>
+            <p><b>Exemplos</b></p>
+            <pre><code>struct pess {
+        int idade;
+        float peso;
+        char nome[50];
+    } pessoa[10]; //declaração abreviada de um vetor de estruturas</code></pre>
+            <pre><code>struct pess {
+        int idade;
+        float peso;
+        char nome[50];
+    };
+    
+    void main(){
+    	struct pess pessoa1, pessoa2; // estruturas distintas
+    	struct pess pessoa[10]; // vetor de estruturas
+    	pessoa1.idade = 17;
+    }</code></pre>
+		<h3>Estruturas Aninhadas</h3>
+        Sigamos o exemplo abaixo, em que há a necessidade de declarar uma estrutura aninhada a outra:
+        <pre><code>struct pessoa {
+	int idade;
+	float altura, peso;
+	char nome[60];
+};
+
+struct aluno {
+	int matricula, turma;
+	char turno;
+	struct pessoa essecial;
+};
+
+// para acessar as variáveis de uma estrutura aninhada em outra, continua-se usando o '.' como separador:
+
+struct aluno aux;
+aux.essencial.idade = 18;</code></pre>
+		<h3>Typedef</h3>
+        <p>Colocar <code>typedef</code> antes da definição de uma estrutura omite <code>struct</code> da declaração, pois assim a estrutura age como se fosse um Tipo de Dado</p>
+        <pre><code>typedef struct srt {
+	//...
+};
+
+void main(){
+	srt s1, s2;
+	srt s[10];
+}</code></pre>
+        <h3><a href="ponteiros.html">Ponteiros</a> para estruturas</h3>
+        <pre><code>typedef struct srt{
+	int temp;
+};
+
+void f(srt *p){
+	//para acessar a variável 'temp' usando o ponteiro 'p', usa-se:
+	p->temp; // esse formato
+	(*p).temp; //ou esse formato (incomum)
+}
+
+//ou seja, de forma genérica podemos definir como:
+&lt;p_srt&gt;->&lt;var&gt;;</code></pre>
+    </main>
+    <footer>
+        <hr>
+        <a href="../programacao.php">Programação</a>
+    </footer>
+</body>
+</html>

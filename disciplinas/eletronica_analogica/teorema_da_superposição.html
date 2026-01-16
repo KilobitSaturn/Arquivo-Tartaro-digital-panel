@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../index.css">
+  <title>Teorema da Superposição</title>
+</head>
+
+<body style="text-align:center; line-height:1.6;">
+
+  <h1>Teorema da Superposição</h1>
+
+  <hr>
+
+  <h2>1) Conceito do Teorema</h2>
+  <p>O <strong>Teorema da Superposição</strong> é aplicado em circuitos que possuem duas ou mais fontes de energia independentes.</p>
+  <p>Ele estabelece que a <strong>corrente</strong> ou a <strong>tensão</strong> em qualquer elemento do circuito é igual à <strong>soma algébrica</strong> dos efeitos produzidos por cada fonte atuando isoladamente.</p>
+  <p>Ou seja, analisamos uma fonte de cada vez, anulando as demais, e ao final somamos os efeitos (correntes ou tensões) de todas elas.</p>
+
+  <hr>
+
+  <h2>2) Anulação das Fontes</h2>
+  <p>Durante o processo de análise, as fontes que não estão sendo consideradas devem ser anuladas:</p>
+  <p><strong>a)</strong> Uma <strong>fonte de corrente</strong> é substituída por um <strong>circuito aberto</strong> (nenhuma corrente passa por ela).</p>
+  <p><strong>b)</strong> Uma <strong>fonte de tensão</strong> é substituída por um <strong>curto-circuito</strong> (seus terminais ficam no mesmo potencial).</p>
+
+  <hr>
+
+  <h2>3) Exemplo — Aplicação do Teorema</h2>
+  <p>Considere o circuito abaixo, que contém duas fontes:  
+  uma <strong>fonte de tensão de 9 V</strong> e uma <strong>fonte de corrente de 2 mA</strong>.  
+  Os resistores são R₁ = 1,2 kΩ e R₂ = 5,6 kΩ.</p>
+
+  <img src="img/superex1p.png" style="filter:invert(1);">
+
+  <p>O objetivo é determinar a <strong>corrente total</strong> e a <strong>tensão em R₂</strong> aplicando o Teorema da Superposição.</p>
+
+  <hr>
+
+  <h3>Etapa 1 — Considerando apenas a fonte de 9 V (V<sub>A</sub>)</h3>
+  <p>Nesta etapa, a fonte de corrente de 2 mA é <strong>anulada</strong> — substituída por um circuito aberto.  
+  Assim, apenas a fonte de 9 V permanece ativa.</p>
+
+  <img src="img/superex2p.png" style="filter:invert(1);">
+
+  <p>O circuito agora tem os resistores R₁ e R₂ em série, e a corrente total é:</p>
+
+  <p>
+    R_eq = R₁ + R₂ = 1,2 k + 5,6 k = 6,8 kΩ<br>
+    I<sub>A</sub> = 9 V / 6,8 kΩ = 1,32 mA
+  </p>
+
+  <p>A tensão sobre R₂ (devida à fonte de 9 V) é:</p>
+  <p>
+    V<sub>A</sub> = I<sub>A</sub> × R₂ = 1,32 mA × 5,6 kΩ = 7,39 V
+  </p>
+
+  <hr>
+
+  <h3>Etapa 2 — Considerando apenas a fonte de 2 mA (I<sub>B</sub>)</h3>
+  <p>Agora, a fonte de tensão de 9 V é <strong>anulada</strong> — substituída por um curto-circuito.  
+  A fonte de corrente de 2 mA permanece ativa.</p>
+
+  <img src="img/superex3p.png" style="filter:invert(1);">
+
+  <p>Nesse caso, os resistores R₁ e R₂ ficam em <strong>paralelo</strong> com a fonte de corrente.  
+  A corrente que atravessa R₂ é determinada pelo divisor de corrente:</p>
+
+  <p>
+    I<sub>B</sub> = 2 mA × (R₁ / (R₁ + R₂))<br>
+    I<sub>B</sub> = 2 mA × (1,2 k / (1,2 k + 5,6 k)) = 0,35 mA
+  </p>
+
+  <p>A tensão sobre R₂ (devida à fonte de 2 mA) é:</p>
+  <p>
+    V<sub>B</sub> = I<sub>B</sub> × R₂ = 0,35 mA × 5,6 kΩ = 1,96 V
+  </p>
+
+  <hr>
+
+  <h3>Etapa 3 — Superposição (Soma dos Efeitos)</h3>
+  <p>Finalmente, somamos os efeitos das duas fontes, respeitando polaridades e sentidos de corrente:</p>
+
+  <p>
+    V_total = V<sub>A</sub> + V<sub>B</sub> = 7,39 V + 1,96 V = 9,35 V<br>
+    I_total = I<sub>A</sub> + I<sub>B</sub> = 1,32 mA + 0,35 mA = 1,67 mA
+  </p>
+
+  <p>Portanto, aplicando o <strong>Teorema da Superposição</strong>, obtemos:  
+  Corrente total em R₂ = <strong>1,67 mA</strong> e Tensão em R₂ = <strong>9,35 V</strong>.</p>
+
+  <hr>
+
+  <h2>4) Conclusão</h2>
+  <p>O Teorema da Superposição mostra que o efeito combinado das fontes é igual à soma dos efeitos individuais.</p>
+  <p>Esse método é fundamental na análise de circuitos com múltiplas fontes, pois permite estudar cada fonte separadamente e depois somar os resultados.</p>
+
+  <p>Em resumo:</p>
+  <p>• Quando há várias fontes, analisa-se uma por vez;<br>
+     • As demais são substituídas por suas condições de anulação;<br>
+     • Os efeitos individuais são somados, respeitando o sentido das correntes e polaridades das tensões.</p>
+
+  <hr>
+  <p><a href="../eletronica_analogica.php">Voltar para Eletrônica Analógica</a></p>
+
+</body>
+</html>

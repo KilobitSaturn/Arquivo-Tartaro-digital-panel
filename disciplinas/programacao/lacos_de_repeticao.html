@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Laços de Repetição</title>
+</head>
+<body>
+    <script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'; mermaid.initialize({ securityLevel: 'loose', theme: 'dark', }); </script>
+    <h1>Laços de Repetição</h1>
+    <p style="text-align: center;"><a href="../programacao.php">Programação</a></p>
+    <main>
+        <p>Os laços de repetição são usados para evitar a reiteração de trechos de códigos ou para atenção a uma condição específica que é obrigatória para o avanço ou progresso de futuras operações. Lembre-se de que os comandos dentro dos seus campos de código usam <code>;</code> pois seguem as regras de código padrão.</p>
+        <h2>Laço <code>for</code></h2>
+        <p>O uso desse laço é bem restrito, geralmente usado para evitar repetições de operações rotineiras em certos trechos do seu código por se tratar de uma quantidade finita, definida de vezes de repetição. </p>
+        <pre class="mermaid" align="center">stateDiagram
+	direction LR
+	[*] --> Início
+	Início --> Condição
+	Condição --> Exceução: Verdadeiro
+	Condição --> [*]: Falso
+	Exceução --> Condição: Incremento
+        </pre>
+        <pre><code>for(&lt;início&gt;; &lt;condição&gt;; &lt;incremento&gt;){
+	//código a ser repetido
+}</code></pre>
+        <h2>Laço <code>While</code></h2>
+        <p>O laço da função while é usado para uma quantidade indefinida de repetições  de vezes, pois deixará de repetir somente quando a sua condição deixar de ser atendida.</p>
+        <pre class="mermaid" align="center">stateDiagram
+	direction LR
+  	[*] --> condição
+	condição --> execução: Verdadeiro
+	condição --> [*]: Falso
+	execução --> condição
+    	</pre>
+        <pre><code>while(&lt;condição&gt;){
+	//execução
+}</code></pre>
+        <h2>Laço <code>do-while</code></h2>
+        <p>O seu uso é semelhante ao do laço anterior, com a diferença de que a condição é realizada no fim do bloco de código, antes de retornar ao início do laço. Isso faz com que o código dentro do bloco seja realizado pelo menos uma vez. Esse é o único laço que usa <code>;</code>.</p>
+        <pre class="mermaid" align="center">stateDiagram
+	direction LR
+  	[*] --> Execução
+	Execução --> Condição
+	Condição --> Execução: Verdadeiro
+	Condição --> [*]: Falso
+        </pre>
+        <pre><code>do {
+	//execução
+} while (&lt;condição&gt;);</code></pre>
+    </main>
+    <footer>
+        <hr>
+        <a href="../programacao.php">Programação</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../index.css">
+  <title>Equivalência de Fontes Reais</title>
+</head>
+
+<body style="text-align:center; line-height:1.6;">
+
+  <h1>Equivalência de Fontes Reais</h1>
+
+  <hr>
+
+  <h2>1) Equivalência de Fontes</h2>
+  <p>Podemos representar um mesmo circuito de duas formas: como <strong>fonte real de tensão</strong> ou como <strong>fonte real de corrente</strong>.  
+  Ambas podem fornecer o mesmo efeito sobre a carga, isto é, a mesma tensão e a mesma corrente.</p>
+
+  <img src="img/exemploeq1p.png" style="filter:invert(1);">
+
+  <p>Ao calcularmos a corrente e a queda de tensão na carga (R<sub>L</sub>), observamos que os resultados são os mesmos, independentemente do tipo de fonte utilizada.</p>
+
+  <p>Por exemplo, para R<sub>L</sub> = 1,5 kΩ:</p>
+  <p>V<sub>RL</sub> = 9,38 V &nbsp;&nbsp;&nbsp;&nbsp; I<sub>RL</sub> = 6,25 mA</p>
+
+  <p>Alterando o valor da carga para 220 Ω e repetindo os cálculos, os resultados continuam equivalentes.  
+  Portanto, para a carga, não há diferença entre usar uma fonte real de tensão ou uma fonte real de corrente — o efeito é o mesmo.</p>
+
+  <hr>
+
+  <h2>2) Significado da Resistência Interna (r<sub>i</sub>)</h2>
+  <p>A <strong>resistência interna (r<sub>i</sub>)</strong> representa as perdas internas de energia dentro da fonte, causadas pela limitação dos materiais e dos componentes internos.</p>
+  <p>Ela não é um resistor físico, mas um modelo que explica a queda de tensão (ou corrente) que ocorre dentro da própria fonte quando ela fornece energia para um circuito.</p>
+  <p>Em uma fonte real de tensão, r<sub>i</sub> fica <strong>em série</strong> com a fonte ideal.  
+  Já em uma fonte real de corrente, r<sub>i</sub> fica <strong>em paralelo</strong> com a fonte ideal.</p>
+  <p>Essa resistência interna influencia o comportamento do circuito: quanto maior for r<sub>i</sub>, menor será a eficiência da fonte.</p>
+
+  <hr>
+
+  <h2>3) Condições de Equivalência</h2>
+  <p>Para que duas fontes reais sejam equivalentes, devem satisfazer as seguintes condições:</p>
+  <p>1 – Ambas devem possuir a mesma resistência interna (r<sub>i</sub>).</p>
+  <p>2 – Devem obedecer à Lei de Ohm:</p>
+  <p style="font-weight:bold;">V<sub>g</sub> = I<sub>g</sub> × r<sub>i</sub></p>
+  <p style="font-weight:bold;">I<sub>g</sub> = V<sub>g</sub> / r<sub>i</sub></p>
+
+  <p>Exemplo:</p>
+  <p>r<sub>i</sub> = 100 Ω em ambas as fontes.</p>
+  <p>V<sub>g</sub> = I<sub>g</sub> × r<sub>i</sub> = 0,1 × 100 = 10 V</p>
+  <p>I<sub>g</sub> = V<sub>g</sub> / r<sub>i</sub> = 10 / 100 = 0,1 A</p>
+
+  <hr>
+
+  <p><a href="../eletronica_analogica.php">Voltar para Eletrônica Analógica</a></p>
+
+</body>
+</html>

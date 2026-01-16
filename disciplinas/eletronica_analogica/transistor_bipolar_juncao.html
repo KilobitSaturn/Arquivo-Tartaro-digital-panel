@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../index.css">
+  <title>Transistor Bipolar (BJT)</title>
+</head>
+
+<body style="text-align:center; line-height:1.6;">
+
+  <h1>Transistor Bipolar de Junção (BJT)</h1>
+
+  <hr>
+
+  <h2>1) O que é um Transistor Bipolar?</h2>
+  <p>O transistor bipolar, também chamado de <strong>BJT</strong>, é um dos componentes mais importantes da eletrônica.  
+  Ele é como uma <strong>chave inteligente</strong> ou um <strong>controlador de corrente</strong>: com uma corrente pequena na base, dá pra controlar uma corrente muito maior entre o coletor e o emissor.</p>
+
+  <p>Ele é formado por três partes: <strong>emissor (E)</strong>, <strong>base (B)</strong> e <strong>coletor (C)</strong>.  
+  A base é bem fininha e funciona como uma “porta de controle”, que decide se o transistor vai deixar a corrente passar ou não.</p>
+
+  <img src="img/transistorpadraop.png" alt="Tipos de transistor NPN e PNP" style="filter:invert(1); margin:15px auto; display:block;">
+
+  <hr>
+
+  <h2>2) Tipos de Transistor: NPN e PNP</h2>
+  <p>Existem dois tipos de transistores: o <strong>NPN</strong> e o <strong>PNP</strong>.  
+  Eles são praticamente iguais, só muda o tipo de material e o sentido em que a corrente flui.</p>
+
+  <ul style="display:inline-block; text-align:left; max-width:800px;">
+    <li><strong>NPN:</strong> a base precisa estar positiva em relação ao emissor.  
+    A corrente sai do emissor e vai pro coletor. É o tipo mais usado, porque combina bem com fontes positivas (como +5V ou +12V).</li>
+
+    <li><strong>PNP:</strong> funciona ao contrário.  
+    A base precisa estar negativa em relação ao emissor, e a corrente vai do coletor pro emissor.  
+    É usado em circuitos onde a tensão negativa é o “lado ativo”.</li>
+  </ul>
+
+  <p>Resumindo: o NPN “liga” quando a base é positiva, o PNP “liga” quando a base é negativa.  
+  O funcionamento é o mesmo — só muda o sentido da corrente.</p>
+
+  <img src="img/transistorp2.png" alt="Símbolos de transistores PNP e NPN" style="filter:invert(1); margin:15px auto; display:block;">
+
+  <hr>
+
+  <h2>3) Como o Transistor Funciona</h2>
+  <p>Pensa no transistor como uma torneira: a corrente que vem do emissor é a água, e a base é a mão que gira o registro.  
+  Quanto mais corrente entra na base, mais corrente o transistor deixa passar do coletor para o emissor.</p>
+
+  <p>Ele pode trabalhar de três jeitos diferentes:</p>
+
+  <ul style="display:inline-block; text-align:left; max-width:800px;">
+    <li><strong>Corte:</strong> nada de corrente — o transistor está “desligado”.</li>
+    <li><strong>Ativo:</strong> conduz um pouco — o transistor amplifica o sinal.</li>
+    <li><strong>Saturação:</strong> conduz tudo o que pode — o transistor está “ligado” como uma chave fechada.</li>
+  </ul>
+
+  <img src="img/transistorregiaop.png" alt="Regiões de funcionamento do transistor" style="filter:invert(1); margin:15px auto; display:block;">
+
+  <hr>
+
+  <h2>4) Polarização do Transistor</h2>
+  <p>Pra o transistor funcionar, ele precisa estar “alimentado” do jeito certo.  
+  A isso a gente chama de <strong>polarização</strong>.</p>
+
+  <p>No caso do transistor NPN, a base precisa estar cerca de <strong>0,7 V acima do emissor</strong> pra começar a conduzir — esse é o famoso V<sub>BE</sub>.</p>
+
+  <p>A corrente de coletor (I<sub>C</sub>) é controlada pela corrente da base (I<sub>B</sub>), e existe uma relação entre elas:</p>
+  <p><strong>I<sub>C</sub> = β × I<sub>B</sub></strong></p>
+  <p>O β (ou h<sub>FE</sub>) é o quanto o transistor multiplica a corrente da base — é o seu “ganho”.</p>
+
+  <hr>
+
+  <h2>5) Transistor como Chave</h2>
+  <p>Um dos usos mais comuns do transistor é como <strong>chave eletrônica</strong>.  
+  Ele funciona ligando ou desligando um circuito, controlando cargas como LEDs, motores, ou relés.</p>
+
+  <ul style="display:inline-block; text-align:left; max-width:800px;">
+    <li><strong>No corte:</strong> não passa corrente — o transistor está desligado.</li>
+    <li><strong>Na saturação:</strong> passa toda a corrente possível — o transistor está ligado.</li>
+  </ul>
+
+  <p>É basicamente o mesmo que apertar um interruptor, só que eletrônico e controlado por uma tensão na base.</p>
+
+  <hr>
+
+  <h2>6) Transistor de Potência</h2>
+  <p>O transistor de potência é como uma versão “forte” do transistor comum.  
+  Ele serve pra controlar correntes e tensões bem maiores, como motores ou lâmpadas.</p>
+
+  <p>Como ele esquenta bastante, normalmente é montado com um <strong>dissipador de calor</strong> pra não queimar.  
+  Mas o princípio é o mesmo: uma corrente pequena na base comanda uma corrente grande no coletor.</p>
+
+  <hr>
+
+ <h2>7) Exemplo Prático — Polarização Base Fixa</h2>
+<p>Considere o circuito abaixo:</p>
+ <img src="img/exemplotransistorp.png" alt="Regiões de funcionamento do transistor" style="filter:invert(1); margin:15px auto; display:block;">
+
+<ul style="display:inline-block; text-align:left; max-width:800px;">
+  <li>V<sub>CC</sub> = 9 V</li>
+  <li>R<sub>B</sub> = 220 kΩ</li>
+  <li>R<sub>C</sub> = 1,2 kΩ</li>
+  <li>V<sub>BE</sub> = 0,7 V</li>
+  <li>β = 130</li>
+</ul>
+
+<p><strong>Passo 1 – Corrente de base:</strong></p>
+<p>I<sub>B</sub> = (V<sub>CC</sub> − V<sub>BE</sub>) / R<sub>B</sub> = (9 − 0,7) / 220 k = 8,3 V / 220 000 Ω = 37,7 µA</p>
+
+<p><strong>Passo 2 – Corrente de coletor:</strong></p>
+<p>I<sub>C</sub> = β × I<sub>B</sub> = 130 × 37,7 µA = 4,9 mA</p>
+
+<p><strong>Passo 3 – Corrente de saturação:</strong></p>
+<p>I<sub>C(sat)</sub> = (V<sub>CC</sub> − V<sub>CE(sat)</sub>) / R<sub>C</sub></p>
+<p>Considerando V<sub>CE(sat)</sub> ≈ 0,2 V → I<sub>C(sat)</sub> = (9 − 0,2) / 1,2 k = 8,8 V / 1200 Ω = 7,3 mA</p>
+
+<p><strong>Passo 4 – Verificando a região de operação:</strong></p>
+<p>Como I<sub>C</sub> = 4,9 mA é <strong>menor que</strong> I<sub>C(sat)</sub> = 7,3 mA, o transistor <strong>não está saturado</strong> — ele opera na <strong>região ativa</strong>.</p>
+
+<p><strong>Passo 5 – Tensão coletor-emissor:</strong></p>
+<p>V<sub>CE</sub> = V<sub>CC</sub> − (I<sub>C</sub> × R<sub>C</sub>) = 9 − (4,9 mA × 1,2 k) = 9 − 5,9 V = 3,1 V</p>
+
+<p><strong>Por que o transistor não está na região de corte?</strong></p>
+<p>Na região de corte, o transistor estaria completamente desligado — ou seja, a <strong>corrente de base seria praticamente zero</strong> e não haveria corrente no coletor (I<sub>C</sub> ≈ 0).</p>
+<p>Mas neste caso, há uma corrente de base de 37,7 µA e uma corrente de coletor de 4,9 mA, o que mostra que o transistor está conduzindo.  
+Logo, ele está <strong>ativo</strong>, controlando a corrente do coletor por meio da corrente da base.</p>
+
+<p><strong>Conclusão:</strong>  
+O transistor está em <strong>região ativa</strong>, pois conduz corrente, mas ainda não atingiu a saturação.  
+Se aumentássemos a corrente de base (diminuindo R<sub>B</sub>), o transistor entraria em saturação e funcionaria como uma chave completamente ligada.  
+Se removêssemos a corrente de base (abrindo o circuito da base), ele entraria em <strong>corte</strong> e se desligaria totalmente.</p>
+
+  <hr>
+
+  <h2>8) Conclusão</h2>
+  <p>O transistor é tipo um “portão eletrônico” da corrente.  
+  Ele pode amplificar sinais, funcionar como chave e controlar cargas grandes com correntes pequenas.</p>
+
+  <p>Os dois tipos — <strong>NPN</strong> e <strong>PNP</strong> — funcionam igual, só mudam o sentido da corrente.  
+  Entender bem isso é o primeiro passo pra dominar a eletrônica analógica e criar circuitos cada vez mais inteligentes.</p>
+
+  <hr>
+  <p><a href="../eletronica_analogica.php">Voltar para Eletrônica Analógica</a></p>
+
+</body>
+</html>

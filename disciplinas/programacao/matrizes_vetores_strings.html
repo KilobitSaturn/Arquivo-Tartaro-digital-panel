@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Matrizes, Vetores e Strings</title>
+</head>
+<body>
+    <h1>Matrizes, Vetores e Strings</h1>
+    <p style="text-align: center;"><a href="../programacao.php">Programação</a></p>
+    <main>
+    	<h2>Matrizes</h2>
+        <p>As matrizes, em programação, são um conjunto ordenado de dados de enésimas dimensões, ou seja, de quantas dimensões forem necessárias. Uma dimensão é definida usando um número natural dentro de colchetes. Na linguaguem C, todas as enumerações começam com 0. Por exemplo: em <code>[10]</code>, as posições vão de 0 a 9.</p>
+        <pre><code>&lt;tipo de dado&gt; &lt;nome da matriz&gt;[m][n][p][q][...];</code></pre>
+        <p><b>Exemplos</b></p>
+        <pre><code>int mat[m][n];</code></pre>
+        <ul>
+            <li><code>int m</code>: número de linhas;</li>
+            <li><code>int n</code>: número de colunas;</li>
+        </ul>
+        <pre><code>#define QNT
+#define CAM
+#define LIN
+#define COL
+    
+float mat1[CAM][LIN][COL];
+int mat2[QNT][CAM][LIN][COL];</code></pre>
+        <h2>Vetores</h2>
+        <p>Vetores são matrizes de apenas 1 dimensão.</p>
+        <pre><code>int vet[v];
+float func[f];
+double doll[d];</code></pre>
+        <h2>Strings</h2>
+        <p>As strings são um caso específico dos vetores: são vetores <code>char</code>, apenas constituido de caracteres. Toda string termina em <code>'\0'</code> (indica final de uma string), o que ocupa um caractere do vetor. Toda vez que for trabalhares com vetores, tome cuidado para não sobrepor outros vetores/memórias/dados. Você é o único que sabe a quantidade de dados a serem usados.</p>
+        <pre><code> char str[c];</code></pre>
+    </main>
+    <footer>
+        <hr>
+        <a href="../programacao.php">Programação</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Fontes Reais de Tensão e de Corrente</title>
+</head>
+<body style="text-align: center;line-height: 1.6;">
+    <h1>Fontes Reais de Tensão e de Corrente</h1>
+
+    <hr>
+
+    <h2>Fontes Ideais (Conceito Teórico)</h2>
+
+    <p>Os componentes de circuito discutidos anteriormente são elementos de circuito <strong>ideais</strong>. Ambas são simplificações que usamos para auxiliar na análise de circuitos. Nenhuma dessas fontes realmente existe no mundo físico.</p>
+    
+    <p>Uma <strong>fonte ideal de tensão</strong> mantém uma tensão fixa, independente da corrente extraída dela.</p>
+    <img src="img/idealvp.png" style="filter:invert(1);">
+    <p>Uma <strong>fonte ideal de corrente</strong> mantém uma corrente fixa, independente da tensão em seus terminais.</p>
+     <img src="img/idealip.png" style="filter:invert(1);">
+    <p>Um dispositivo com tensão infinita de circuito aberto ou corrente infinita de curto-circuito seria extremamente perigoso. Veja os limites teóricos:</p>
+    
+    <table border="1" style="margin: 20px auto; border-collapse: collapse;">
+        <caption>Fonte de Tensão Ideal (Vf = 12 V)</caption>
+        <thead>
+            <tr>
+                <th style="padding: 8px;">RL</th>
+                <th style="padding: 8px;">It</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 8px;">1 k&Omega;</td>
+                <td style="padding: 8px;">12 mA</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">10 &Omega;</td>
+                <td style="padding: 8px;">1,2 A</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">0,1 &Omega;</td>
+                <td style="padding: 8px;">120 A</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">0,001 &Omega;</td>
+                <td style="padding: 8px;">12 kA</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">CURTO-CIRCUITO (RL &#x2192; 0)</td>
+                <td style="padding: 8px;">I &#x2192; &infin;</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table border="1" style="margin: 20px auto; border-collapse: collapse;">
+        <caption>Fonte de Corrente Ideal (If = 5 mA)</caption>
+        <thead>
+            <tr>
+                <th style="padding: 8px;">RL</th>
+                <th style="padding: 8px;">Vab</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 8px;">1 k&Omega;</td>
+                <td style="padding: 8px;">5 V</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">100 k&Omega;</td>
+                <td style="padding: 8px;">500 V</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">1 M&Omega;</td>
+                <td style="padding: 8px;">5000 V</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">10 M&Omega;</td>
+                <td style="padding: 8px;">50 kV</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">CIRCUITO ABERTO (RL &#x2192; &infin;)</td>
+                <td style="padding: 8px;">V &#x2192; &infin;</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Modelo de Fonte Real de Tensão</h2>
+
+    <p>Os elementos de circuito do mundo real se aproximam dos modelos matemáticos ideais, mas inevitavelmente serão imperfeitos. Em vez disso, existem apenas fontes, que fornecem tensão ou fornecem corrente aos circuitos. A diferença entre elas é: qual dos parâmetros está sob o controle da fonte e qual sob o controle da carga.</p>
+    <ul>
+        <li>Em uma <strong>fonte de tensão</strong>, a tensão é fixa e a corrente muda dependendo da carga.</li>
+        <li>Em uma <strong>fonte de corrente</strong>, a corrente é fixa e a tensão muda dependendo da carga.</li>
+    </ul>
+
+    <p>Uma aproximação melhorada de uma fonte real de tensão (ou corrente) deve levar em conta as <strong>perdas internas de energia</strong>. Quando exigimos uma corrente elevada da fonte de tensão, a tensão de saída disponível será menor que a tensão gerada internamente (Vmed &lt; Vg). O Vmed será igual a Vg menos a perda interna.</p>
+
+    <h3>A Resistência Interna (r<sub>i</sub>)</h3>
+    <p>O modelo para uma <strong>fonte real de tensão</strong> é composto por uma <strong>fonte ideal de tensão (V<sub>g</sub>)</strong> em série com uma <strong>resistência interna (r<sub>i</sub>)</strong>.</p>
+    <ul>
+        <li><strong>V<sub>g</sub>:</strong> Tensão gerada internamente pela fonte (V).</li>
+        <li><strong>r<sub>i</sub>:</strong> Resistência interna (&Omega;).</li>
+        <li><strong>V<sub>s</sub>:</strong> Tensão de saída disponível para a carga.</li>
+        <li><strong>r<sub>i</sub></strong> representa a limitação da fonte em fornecer corrente a uma carga e as perdas internas de energia na fonte.</li>
+    </ul>
+
+    <p>Esta resistência (r<sub>i</sub>) é somente uma representação, um modelo simplificado das perdas internas na fonte. Através dela, podemos dar uma explicação da queda de tensão na saída da fonte de tensão quando se exigem correntes elevadas e assim influenciar no comportamento do circuito.</p>
+
+    <p><strong>Observação:</strong> Esta resistência interna não é uma resistência física e não pode ser medida diretamente com um multímetro na escala de Ohms, mas pode ser determinada indiretamente pela análise do circuito.</p>
+
+    <h3>A Equação da Fonte Real</h3>
+    <img src="img/malha1p.png" style = "filter:invert(1);">
+    <p>Quando a fonte real de tensão é conectada a uma carga (R<sub>L</sub>), o circuito atua como um circuito em série, onde a tensão total (V<sub>g</sub>) se divide entre a resistência interna (r<sub>i</sub>) e a resistência de carga (R<sub>L</sub>).</p>
+    <p>A corrente total é I<sub>t</sub>.</p>
+    <p>V<sub>ri</sub> é a queda de tensão sobre a resistência interna.</p>
+    <p>Aplicando a Lei de Kirchhoff para tensões (Lei da Malha), temos:</p>
+    <p style="font-weight: bold; text-align: center;">+V<sub>g</sub> − V<sub>ri</sub> − V<sub>s</sub> = 0</p>
+    <p>A equação da tensão de saída (V<sub>s</sub>) é obtida isolando V<sub>s</sub>, e substituindo V<sub>ri</sub> pela Lei de Ohm (V<sub>ri</sub> = I<sub>t</sub> ⋅ r<sub>i</sub>):</p>
+    <p style="font-weight: bold; text-align: center;">V<sub>s</sub> = V<sub>g</sub> − V<sub>ri</sub></p>
+    <p style="font-weight: bold; text-align: center;">V<sub>s</sub> = V<sub>g</sub> − I<sub>t</sub> ⋅ r<sub>i</sub></p>
+
+    <hr>
+
+    <h2>Análise em Carga e Exercícios</h2>
+
+    <p>Podemos analisar o circuito como um circuito série divisor de tensão. A tensão gerada V<sub>g</sub> será dividida entre r<sub>i</sub> e R<sub>L</sub>.</p>
+    <p>Considerando r<sub>i</sub> constante, se diminuirmos R<sub>L</sub> aumenta a corrente do circuito. Se a corrente aumentar, vai diminuir a tensão na saída da fonte (V<sub>s</sub>).</p>
+    <p>Se R<sub>L</sub> for muito maior que r<sub>i</sub> (R<sub>L</sub> >>> r<sub>i</sub>), quase toda a tensão gerada na fonte estará disponível na saída (V<sub>s</sub>) para a carga.</p>
+    <p>Se R<sub>L</sub> diminui, diminui a tensão (V<sub>s</sub>) sobre a carga e a capacidade de fornecer energia da fonte. Isso aumenta a tensão sobre r<sub>i</sub> (V<sub>ri</sub>), que representa um aumento das perdas internas na fonte.</p>
+
+    <h3>Exemplo: Divisor de Tensão em Fonte Real (V<sub>g</sub> = 12 V e r<sub>i</sub> = 0,1 &Omega;)</h3>
+    <p>Calcular a tensão e a corrente no circuito abaixo de acordo com a variação de R<sub>L</sub>:</p>
+
+    <table border="1" style="margin: 20px auto; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="padding: 8px;">R<sub>L</sub> (&Omega;)</th>
+                <th style="padding: 8px;">I<sub>t</sub></th>
+                <th style="padding: 8px;">V<sub>ri</sub></th>
+                <th style="padding: 8px;">V<sub>s</sub></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 8px;">10 k</td>
+                <td style="padding: 8px;">1,19988 mA</td>
+                <td style="padding: 8px;">119,988 &micro;V</td>
+                <td style="padding: 8px;">11,999 V</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">1 k</td>
+                <td style="padding: 8px;">11,988 mA</td>
+                <td style="padding: 8px;">1,1988 mV</td>
+                <td style="padding: 8px;">11,998 V</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">100</td>
+                <td style="padding: 8px;">119,88 mA</td>
+                <td style="padding: 8px;">11,988 mV</td>
+                <td style="padding: 8px;">11,988 V</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">10</td>
+                <td style="padding: 8px;">1,188 A</td>
+                <td style="padding: 8px;">118,8 mV</td>
+                <td style="padding: 8px;">11,88 V</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">1</td>
+                <td style="padding: 8px;">10,91 A</td>
+                <td style="padding: 8px;">1,09 V</td>
+                <td style="padding: 8px;">10,91 V</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">0,1</td>
+                <td style="padding: 8px;">60 A</td>
+                <td style="padding: 8px;">6 V</td>
+                <td style="padding: 8px;">6 V</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">0,01</td>
+                <td style="padding: 8px;">109,1 A</td>
+                <td style="padding: 8px;">10,9 V</td>
+                <td style="padding: 8px;">1,1 V</td>
+            </tr>
+        </tbody>
+    </table>
+	 <p><a href="../eletronica_analogica.php">Eletrônica Analógica</a></p>
+
+</body>
+</html>

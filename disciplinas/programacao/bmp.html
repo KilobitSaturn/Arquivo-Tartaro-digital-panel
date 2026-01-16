@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <script type="text/javascript" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+    <title>O formato do arquivo de imagem BITMAP (.bmp)</title>
+</head>
+<body>
+    <h1>O formato do arquivo de imagem BITMAP (.bmp)</h1>
+    <p style="text-align: center;"><a href="../programacao.php">Programação</a></p>
+    <main>
+        <p>O tipo de arquivo de imagem BITMAP tem suas dimensões avaliadas diferentemente das outras. O dimensionamento da imagem começa no canto inferior esquerdo e segue pelas linhas, em pixels, até o canto superior direito. Para que o programa consiga ler corretamente, é necessário a adição de "Padding" - valores vazios que servem para complementar a linha de pixels - de forma que ela contenha um número de bytes que seja múltiplo de 4. Essa padronização é necessária para o alinhamento correto da leitura dos dados de imagem ao ser lida pelo programa de exibição de imagem.</p>
+        <h2>O cabeçalho BITMAP</h2>
+        <table>
+        	<thead>
+                <tr>
+                    <th>Ordem \(\left(n\right)\)</th>
+                    <th>Número de Bytes \(\left(n_\text{By}\right)\)</th>
+                    <th>Somatório de Bytes \(\left(\sum n_\text{By}\right)\)</th>
+                    <th>Identificador do Campo</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>2</td>
+                    <td>2</td>
+                    <td>Signature</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>4</td>
+                    <td>6</td>
+                    <td>FileSize</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>4</td>
+                    <td>10</td>
+                    <td>Reserved</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>14</td>
+                    <td>DataOffset</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>18</td>
+                    <td>Size</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>22</td>
+                    <td>Width</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>26</td>
+                    <td>Height</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>28</td>
+                    <td>Planes</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>2</td>
+                    <td>30</td>
+                    <td>BitsPerPixel</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>4</td>
+                    <td>34</td>
+                    <td>Compression</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>4</td>
+                    <td>38</td>
+                    <td>ImageSize</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>4</td>
+                    <td>42</td>
+                    <td>XpixelsperM</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>4</td>
+                    <td>46</td>
+                    <td>YpixelsperM</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>4</td>
+                    <td>50</td>
+                    <td>ColorsUsed</td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>4</td>
+                    <td>54</td>
+                    <td>ImportantColors</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Descrição do Cabeçalho</h2>
+        <h3>Cabeçalho do Arquivo</h3>
+        <ul>
+            <li>Signature: Contém a palavra "BM".</li>
+            <li>FileSize: Tamanho do Arquivo (em Bytes).</li>
+            <li>Reserved: Reservado, inutilizado.</li>
+            <li>DataOffset: Deslocamento do início do arquivo até o início dos dados do bitmap (em bytes).</li>
+        </ul>
+        <h3>Cabeçalho de Informações</h3>
+        <ul>
+            <li>Size: Tamanho do Cabeçalho de Informações.</li>
+            <li>Width: Comprimento bitmap (em pixels).</li>
+            <li>Height: Altura bitmap (em pixels).</li>
+            <li>Planes: número de planos (geralmente é 1). Outros valores podem indicar a separação cromática em diferentes planos da imagem.</li>
+            <li>BitsPerPixel: é usado
+      para armazenar informações de entrada da paleta. Isso também identifica, indiretamente, o número de cores possíveis. Os valores possíveis são:<ul style="margin-left: 40px;">
+                <li>1 = paleta monocromática, NumColors = 1</li>
+                <li>4 = paleta de 4 bits, NumColors = 16</li>
+                <li>8 = paleta de 8 bits, NumColors = 256</li>
+                <li>16 = RGB de 16 bits, NumColors = 65536</li>
+                <li>24 = RGB de 24 bits, NumColors = 16M</li>
+				</ul>
+            </li>
+            <li>Compression: Tipo de compressão. Qualquer valor diferente de 0 indica alguma forma de compressão.</li>
+            <li>ImageSize: Tamanho da imagem (comprimida). É válido definir este valor como 0 se a compressão for igual a 0.</li>
+            <li>XpixelsperM: resolução horizontal (px/m).</li>
+            <li>YpixelsperM: resolução vertical (px/m).</li>
+            <li>ColorsUsed: Número de cores efetivamente utilizadas. Para um bitmap de 8 bits/pixel, esse valor será de até 256.</li>
+            <li>ImportantColors: Número de cores importantes. 0 indica que todas as cores são importantes.</li>
+        </ul>
+    </main>
+    <footer>
+        <hr>
+        <a href="../programacao.php">Programação</a>
+    </footer>
+</body>
+</html>

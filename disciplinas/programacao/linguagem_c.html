@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>A Linguagem C</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+    <script type="module"> import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs'; mermaid.initialize({ securityLevel: 'loose', theme: 'dark', }); </script>
+</head>
+<body>
+    <h1>A Linguagem C</h1>
+    <p style="text-align: center;"><a href="../programacao.php">Programação</a></p>
+    <main>
+        <h2>O histórico da Linguagem C</h2>
+        <p align="center"><q>Encontro com <a>História</a></q></p>
+        <pre class="mermaid" align="center">graph LR
+  A([BCPL]) ---> |Simplificação| B((B)) ---> |Implementação de funções de baixo nível| C((C))
+        </pre>
+        <p>A linguagem “C” surgiu de uma implementação da “B”, que por si só era composta de funções de baixo nível, ou seja, que mexiam diretamente com os valores e endereços de memória do dispositivo. Projetada em 1972, no laboratório da Bell, por Dennis Ritchie, a “C” é tida por uma linguagem de médio nível, pois implementa instruções a nível de bit e endereços (o que só era feito através do <i>assembler</i>, um tipo de compilador) e instruções de alto nível (o que ocorre na maioria das linguagens de programação).</p>
+        <h2>As qualidades da Linguagem C</h2>
+        <h3>Portabilidades</h3>
+        <p> comitê ANSI (<i>American National Standards Institute</i> - equivalente à ABNT no Brasil) iniciou um trabalho de padronização que foi seguido, em grande parte, pelas implementações comerciais. O C iniciou e popularizou esse padrão das linguagem de programação.</p>
+        <h3>Disposições</h3>
+        <ul>
+            <li>Conjunto básico de tipo de dados;</li>
+            <li>Instruções para programação estruturada;</li>
+            <li>Possui um pequeno número de comandos;</li>
+            <li>Protótipos de função;</li>
+            <li>Possui ponteiros e aritmética de endereços.</li>
+        </ul>
+        <h2>Estrutura de um programa em C</h2>
+        <p>Todo programa escrito em linguagem C necessita de uma estrutura mínima para poder ser compilado e não gerar erro. Como a linguagem tem poucos comandos, a grande maioria das ações são realizadas através das <a href="funcoes_da_programacao.html">funções</a>.<br><br>Desta forma, a primeira declaração deve ser a das bibliotecas de funções (<code>#include</code>), seguindo das declarações (<code>#define</code>) e as variáveis globais (públicas). O próximo passo é declarar as funções e, dentre elas, devemos destacar a obrigatoriedade da função principal chamada <code>main</code>.</p>
+        <h3>O pré-processador</h3>
+        <p>O pré-processador é um programa que examina o programa-fonte em C e executa certas modificações antes da compilação com base em instruções - chamadas de <i>diretivas</i>. - As diretivas do pré-processador devem fazer parte do programa fonte, mas não farão parte do programa executável, pois elas são retiradas pelo pré-processador assim que forem executados e se tornarem desnecessários.</p>
+        <ul>
+            <li><code>#include</code>:<p>A diretiva <code>include</code> provoca a inclusão de outro arquivo no programa fonte. O efeito obtido é a apresentação de um texto, como se tivéssemos digitado todo o conteúdo do arquivo e o associado ao programa atual.</p></li>
+            <li><code>#define</code>:<p>A diretiva <code>define</code> usada para definir constantes com nomes apropriados (na sua forma mais simples). Por convenção, o identificador é escrito em letras maiúsculas e cada diretiva deve estar escrita em uma nova linha.</p></li>
+        </ul>
+        <h4>A ordem dos fatores altera o produto</h4>
+        <p>Não apenas as diretivas, mas todas as linhas de código são lidas consecutiva e respectivamente, de cima para baixo. Isso significa que o resultado das operações lógicas que você colocar podem ser diferentes dependendo da ordem em que elas estão.</p>
+        <h2>Variáveis</h2>
+        <p>As variáveis são a forma mais direta de guardar dados dentro da memória de um dispositivo eletrônico. Todas as variáveis são compostas por elementos que devem ser decididos pelo programador (você!), com exceção do endereço de memória:</p>
+        <ul>
+            <li>Um <b>tipo de dado</b>: podem ser qualquer um dos tipos de dados citados no próximo subtítulo.</li>
+			<li>Um <b>identificador</b>: qualquer nome que contenha letras maiúsculas e minúsculas, números e subtraço (<code>_</code>); desde que não conflitam com os identificadores de outros elementos do sistema.<p><b>Tamanho é documento</b><br>A linguagem C é "<i>case sensitive</i>", isto é: letras maiúsculas ou minúsculas são interpretadas de maneiras diferentes. Se você declarar uma variável com o nome <code>soma</code> ela será diferente de <code>Soma</code>, <code>SOMA</code>, <code>SoMa</code> ou <code>sOmA</code>. Da mesma maneira, os comandos do C só podem ser escritos em letras minúsculas pois, senão, o compilador não irá interpretá-los como sendo comandos.</p></li>
+            <li>Um <b>endereço de memória</b>: é um número que indica onde se encontra essa variável na memória eletrônica - o endereço é escolhido automaticamente pelo algoritmo de memória.</li>
+            <li>Um <b>local</b>: dependendo de onde você declara as suas variáveis, elas podem ser acessadas por todo o seu programa ou apenas seções específicas dele. Abordaremos isso posteriormente.</li>
+            <h3>Tipos de dados</h3>
+            <p>Na linguagem C, existem 5 tipos básicos de dados. O limite do <b>alcançe</b> - o quão longínquos são os valores que podem ser armazenados em certo tipo de dado - são definidos pelo tamanho de armazenamento necessário para guardá-lo. Todos os tipos de dados possuem um <b>tamanho fixo</b>.</p>
+        </ul>
+        <table>
+            <thead>
+                <tr>
+                    <th>Identificador</th>
+                    <th>Tamanho (Bytes)</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>void</td>
+                    <td>0</td>
+                    <td>Vazio. Nada.</td>
+                </tr>
+                <tr>
+                    <td>char</td>
+                    <td>1</td>
+                    <td>Armazena um (e apenas um) caractere conforme a tabela ASCII, possuindo um valor numérico inteiro correspondente.</td>
+                </tr>
+                <tr>
+                    <td>int</td>
+                    <td>2 ou 4</td>
+                    <td>Armazena um valor numérico inteiro (\(\in \mathbb Z\)).</td>
+                </tr>
+                <tr>
+                    <td>float</td>
+                    <td>4</td>
+                    <td>Armazena um valor numérico real (\(\in \mathbb R\)).</td>
+                </tr>
+                <tr>
+                    <td>double</td>
+                    <td>8</td>
+                    <td>Armazena um valor numérico real (\(\in \mathbb R \)) com o dobro de limite.</td>
+                </tr>
+           </tbody>
+    	</table>
+        <ul>
+            <li>Por que <code>char</code> possui um valor numérico?
+                <p>Assim como os <code>int</code>, as variáveis char guardam na memória um valor numérico inteiro; mas, diferente deles, identificar uma variável como <code>char</code> faz com que o algoritmo de leitura converta esse valor numérico em um caractere, um símbolo ou comando. Esse caractere é correspondente com o Código Padrão Americano para o Intercâmbio de Informação (do inglês: “American Standard Code for Information Interchange” ou ASCII, pronunciado /’áski’/), que é o mesmo usado pelo seu teclado.</p>
+            </li>
+        </ul>
+        <h3>Operações das Variáveis</h3>
+        <h4>Declaração</h4>
+        <p>Declarar uma variável significa reservar um espaço de memória do dispositivo eletrônico para guardar valores. Em C, elas são feitas da seguinte maneira:</p>
+        <pre><code>tipo_de_dado identificador; //(o ponto e vírgula é obrigatório no final de cada linha.)
+//Exs:
+char c;
+int info;
+float fly;
+double dice;</code></pre>
+        <p>Como você pode ter percebido, <code>void</code> é o único tipo de dado que é indeclarável.</p>
+        <h5>Declarações</h5>
+        <p>Se você precisa de múltiplas variáveis do mesmo tipo de dado, você não precisa declarar todas elas em linhas diferentes você pode fazê-las na mesma linha usando a vírgula (<code>,</code>). Desse modo, você pode declarar quantas variáveis forem necessárias.</p>
+        <pre><code>int i, j;
+char a, b, c;
+float pi, phi, e, sqrt2, alpha, delta;</code></pre>
+        <p>Uma variável declarada mas não atribuída não tem valor definido, ou melhor, ela pode ter qualquer valor que a máquina possa ter descartado na sua própria memória.</p>
+        <h4>Atribuição</h4>
+        <p>Atribuir uma variável significa associá-la a um valor; de forma que, toda vez que essa variável for chamada, ou seja, participar do algoritmo sem ser na sua própria declaração - o que sugere que atribuições só podem ser realizadas em variáveis declaradas -, ela contenha tal dito valor:</p>
+        <pre><code>&lt;identificador&gt; = &lt;valor&gt;;
+/*Exemplos*/
+//Ex. 1
+int i;
+i = 10;
+//Ex. 2
+float f;
+f = 2.754693;
+//Ex. 3
+double d;
+d = 3401695.15342;
+</code></pre>
+        <p>A declaração de variáveis char é um pouco mais específica. Você pode atribuir a uma variável do tipo char o valor correspondente a um caractere em ASCII, ou você pode fazer isso diretamente colocando o caractere entre apóstrofos (<code>’</code>).</p>
+        <pre><code>char c;
+c = 99; //99 corresponde ao caractere 'c' em ASCII.
+//ou...
+c = 'c'; //nessa linha, o caractere 'c' foi atribuído à variável c sem usar o valor seu numérico.</code></pre>
+        <h5>Substituição</h5>
+        <p>As variáveis são chamadas assim porque o seu valor pode ser alterado ou variado de acordo com a necessidade. Substituir o valor de uma variável é um processo simples: é só atribuir outro valor no lugar!</p>
+        <pre><code>int i; //aqui, a variável "i" não tem valor definido.
+i = 10; // aqui, "i" vale 10.
+//...   a variável "i" é usada no algoritmo.
+i = 2; // aqui, "i" agora vale 2.</code></pre>
+        <p>Todas as operações realizadas enquanto <code>i</code> valia 10 ainda mantém os seus valores inalterados, apenas as operações realizadas depois que <code>i</code> foi atribuído com 2 usarão esse mesmo valor.</p>
+        
+        <h5>Atribuições</h5>
+        <p>Usar uma constante para atribuir a múltiplas variáveis é possível usando a linguagem C.</p>
+        <pre><code>int i, j;
+i = j = 8; // "i" vale "j" que, por conseguinte, vale 8;</code></pre>
+        <h4>Contração<sup><a id="p1-1" href="#n1">[1]</a></sup></h4>
+        <p>É possível atribuir um valor a uma variável assim que declará-la no seu código, assim ocorrendo o processo de contração da declaração com a atribuição. Funciona com declaração múltipla também.</p>
+        <pre><code>char c = 'c';
+int i = 10, j = 2, /*...*/;
+float pi = 3.1415, phi = 1.6180, e = 2.7183;
+double d = 12345.6789;</code></pre>
+        <h2>Funções</h2>
+        <h3>A função principal (<code>main</code>)</h3>
+        <p>A função main é única função obrigatória em todos os códigos de programas em C pois ela indica a rotina principal, a mais importante, o que será executado propriamente. O bloco de comando que será executado dentro da função main é delimitado por chaves (<code>{}</code>).</p>
+        <pre><code>int main{
+        //código a ser executado
+}</code></pre>
+        <h2>Operadores</h2>
+        <p>Os operadores são usados para executar diversos tipos de operações em C. Os mais comuns são os operadores matemáticos:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Símbolo</th>
+                    <th>Operação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>+</td>
+                    <td>Adição</td>
+                </tr>
+                <tr>
+                    <td>-</td>
+                    <td>Subtração</td>
+                </tr>
+                <tr>
+                    <td>*</td>
+                    <td>Multiplicação</td>
+                </tr>
+                <tr>
+                    <td>/</td>
+                    <td>Divisão</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Notas</h2>
+        <ol>
+            <li id="n1"><a href="#p1-1">[^]</a> Contração é o processo de unir duas ou mais palavras que, juntas, formam uma nova palavra mais curta, geralmente com a omissão de sons (fonemas).</li>
+        </ol>
+    </main>
+    <footer>
+        <hr>
+        <a href="../programacao.php">Programação</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../index.css">
+  <title>Análise de Circuitos em Corrente Alternada</title>
+  <script type="text/javascript" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+</head>
+
+<body>
+ <div style="max-width: 800px; margin: auto; text-align: center; line-height: 1.6;">
+    <h1>Análise de circuitos AC</h1>
+
+    <h2>Impedância como uma relação entre fasores</h2>
+
+    <p>
+      A impedância (\(Z\)) é a grandeza que relaciona a tensão e a corrente em um circuito de corrente alternada (AC), 
+      da mesma forma que a resistência relaciona tensão e corrente em corrente contínua (DC).<br>
+      Ela indica o quanto o circuito se opõe à passagem da corrente alternada e é representada por um número complexo:
+    </p>
+    \[
+     	\huge Z = R + jX
+    \]
+    <p>
+      Onde:<br><ul>
+      <li>\(R\) é a parte real (resistência, que dissipa energia em calor);</li>
+      <li>\(X\) é a parte imaginária (reatância, que armazena e devolve energia);</li>
+      <li>\(j\) é a unidade imaginária, equivalente a \(\sqrt{-1}\).<li></ul>
+      Assim, cada tipo de componente possui sua própria forma de impedância: <strong>Zr</strong> (resistor), <strong>Zc</strong> (capacitor) e <strong>ZL</strong> (indutor).
+    </p>
+
+    <h3>a) Resistor</h3>
+    <p>
+      No resistor, a tensão e a corrente estão sempre em fase, ou seja, seus picos ocorrem ao mesmo tempo. 
+      O resistor não armazena energia — ele apenas a dissipa em forma de calor.  
+      Portanto, sua impedância é puramente real.
+    </p>
+    
+    \[\begin{aligned}{
+    v_r(t) = V_p\cdot\sin(2πft + \theta), [V]\\
+    i_r(t) = I_p\cdot\sin(2πft + \theta), [A]
+    }\end{aligned}\\
+    V_r = I_r \cdot R \implies Z_r = R
+    \]
+    
+    <h3>b) Capacitor</h3>
+    <p>
+      O capacitor armazena energia no campo elétrico entre suas placas. 
+      A corrente se adianta em 90° em relação à tensão, pois o capacitor reage mais rápido às mudanças de tensão.  
+      Sua impedância é inversamente proporcional à frequência: quanto maior a frequência, menor a oposição à corrente.
+    </p>
+    \[\begin{aligned}{
+    v_c(t) = V_p\cdot\sin(2πft + \theta), [V]\\
+    i_c(t) = I_p\cdot\sin(2πft + \theta + 90°), [A]
+    }\end{aligned}\\
+    V_c = I_c \cdot {1 \over j\omega C} \implies Z_c = {1 \over j\omega C} = -jX_c
+    \]
+    <p>
+      Onde \(X_c = {1 \over j\omega C}\) é a reatância capacitiva.
+    </p>
+
+    <h3>c) Indutor</h3>
+    <p>
+      O indutor armazena energia em seu campo magnético e se opõe às variações da corrente.  
+      Nesse caso, a tensão se adianta em 90° em relação à corrente.  
+      Sua impedância aumenta proporcionalmente à frequência.
+    </p>
+    \[\begin{aligned}{
+    v_l(t) = V_p\cdot\sin(2πft + \theta), [V]\\
+    i_l(t) = I_p\cdot\sin(2πft + \theta - 90°), [A]
+    }\end{aligned}\\
+    V_l = I_l \cdot j\omega L \implies Z_l = j\omega L = jX_l
+    \]
+    <p>
+      Onde \(X_l = {1 \over j\omega L}\) é a reatância indutiva.
+    </p>
+
+    <h2>Análise Fasorial</h2>
+    <p>
+      É uma técnica de análise de circuitos CA onde tensões e correntes senoidais são transformadas em números complexos chamados fasores e onde resistores, capacitores e indutores são transformados em números complexos denominados impedâncias.
+    </p>
+
+    <h3>Etapas da aplicação da análise fasorial em circuitos AC</h3>
+    <ol>
+      <li>Transformar equações senoidais em fasores com valores RMS.</li>
+      <li>Calcular, se necessário, as reatâncias indutivas e capacitivas do circuito.</li>
+      <li>Desenhar o esquema do circuito com fasores e impedâncias.</li>
+      <li>Aplicar as ferramentas de análise de circuitos (Lei de Ohm, leis de malhas, nós, etc.).</li>
+      <li>Transformar os fasores nas respectivas equações de tensões e correntes.</li>
+    </ol>
+
+    <h2>Impedâncias totais em associações de elementos</h2>
+    <p>
+      A impedância total de um circuito depende de como os elementos estão conectados:
+    </p>
+
+    <h3>1) Associação em série</h3>
+    <p>
+      Quando resistores, capacitores e indutores estão em série, a corrente que passa por todos é a mesma, 
+      e a tensão total é a soma das tensões nos elementos.  
+      Portanto, a impedância total é a soma algébrica das impedâncias individuais:
+    </p>
+    \[
+    Z_{eq} = Z_1 + Z_2 + \dots + Z_n
+    \]
+    <p>
+      Exemplo: um resistor R e um capacitor C em série:<br>
+       \[
+      Z_1 = R, Z2 = {1 \over j\omega C}\\
+      Z_{eq} = R + {1 \over j\omega C}
+       \]
+    </p>
+
+    <h3>2) Associação em paralelo</h3>
+    <p>
+      Quando os elementos estão em paralelo, todos compartilham a mesma tensão, mas a corrente se divide.  
+      A impedância total é dada pela soma das condutâncias (inverso da impedância):
+    </p>
+    \[\def\1over#1{{1 \over {#1}}}
+    \1over{Z_{eq}} = \1over{Z_1} + \1over{Z_2} + \dots + \1over{Z_n}
+    \]
+    <p>
+      Exemplo: um resistor R e um capacitor C em paralelo:<br>
+      \[\def\1over#1{{1 \over {#1}}}
+        \1over{Z_{eq}} = \1over R + j\omega C\\
+        Z_{eq} = \1over{\1over{R} + j\omega C}
+      \]
+    </p>
+
+    <h3>3) Transformando em forma polar</h3>
+    <p>
+      Após calcular \(Z_{eq}\) (em forma retangular: \(R + jX\)), muitas vezes é útil converter para a forma polar:<br>
+      \(|Zeq| = \sqrt{R^2 + X^2}\), onde |Zeq| é o módulo da impedância e <br>
+      \(\theta = \arctan(\frac X R)\), \(\theta\) é o ângulo de defasagem entre tensão e corrente.
+    </p>
+
+    <h2>Exemplos</h2>
+
+    <div class="example">
+      <p><strong>Exemplo 1</strong></p>
+      <p>
+        <img src= "img/circuitoac1s.png" style ="filter: invert(1);">
+          <br>
+        Zeq = 100 + j200 Ω =&gt; Zeq = 223,1 &lt; 63,4º<br>
+        It = Vf / Zeq = 12 &lt; 0º / 223,1 &lt; 63,4º = 53,8 &lt; -63,4º mA<br>
+        Vr = It · R = (53,8e-3 &lt; -63,4º) · (100 &lt; 0º) = 5,38 &lt; -63,4º V<br>
+        VL = It · XL = (53,8e-3 &lt; -63,4º) · (200 &lt; 90º) = 10,76 &lt; 26,6º V
+      </p>
+    </div>
+
+    <div class="example">
+      <p><strong>Exemplo 2 (com associação série/paralelo)</strong></p>
+      <p>
+        <img src= "img/circuitoac2s.png" style ="filter: invert(1);">
+        <br>
+        Z1 = 400 - j600 Ω =&gt; 721,1 &lt; -56,31º Ω<br>
+        Z2 = 500 + j150 Ω =&gt; 522 &lt; 16,7º Ω<br>
+        Z1 // Z2 = 364,4 - j84,13 Ω =&gt; 374 &lt; -13º Ω (aprox)<br>
+        Zeq = 200 + (Z1 // Z2) = 564,4 - j84,13 Ω =&gt; 570,6 &lt; -8,48º Ω<br>
+        It = Vf / Zeq = (35,36 &lt; 0º) / (570,6 &lt; -8,48º) = 61,97e-3 &lt; 8,48º A<br>
+        VAB = It · (Z1 // Z2) = 23,18 &lt; -4,52º V<br>
+        I1 = VAB / Z1 = 32,15e-3 &lt; 51,79º A<br>
+        I2 = VAB / Z2 = 44,3e-3 &lt; 21,22º A
+      </p>
+    </div>
+    <p><a href="../eletronica_analogica.php">Eletrônica Analógica</a></p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../index.css">
+  <title>O Diodo Zener</title>
+  <script type="text/javascript" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+</head>
+
+<body style="text-align: center;line-height: 1.6;">
+  
+    <h1>O Diodo Zener</h1>
+
+    <p>
+      O <strong>diodo Zener</strong> é um componente eletrônico muito utilizado em circuitos que precisam manter uma <strong>tensão constante</strong>.
+      Ele é projetado especialmente para operar no sentido <strong>reverso</strong>, controlando a tensão de forma precisa e segura.
+    </p>
+
+    <h2>1. Revisão: diodos em série para obter tensão constante</h2>
+    <p>
+      Sabemos que um diodo comum de silício, quando conduz, apresenta uma queda de tensão em torno de 0,7 V.
+      Assim, se colocássemos vários diodos em série, poderíamos somar essas quedas e obter uma tensão aproximadamente constante.
+    </p>
+
+    <p>
+      Por exemplo, se colocarmos 17 diodos em série:  
+      <br>17 × 0,7 V = 11,9 V.  
+      Isso até funciona, mas é totalmente <strong>impraticável</strong> na maioria dos circuitos — ocuparia muito espaço e seria difícil de controlar.
+    </p>
+
+    <h2>2. O que é o Diodo Zener</h2>
+    <p>
+      Diodo Zener:<br>
+      <img src="img/diodozp.png" style="filter:invert(1); width:200px;">
+        <br>
+      Para resolver esse problema, existe o <strong>diodo Zener</strong>.  
+      Ele é fabricado de maneira diferente dos diodos comuns, com uma <strong>junção P-N altamente dopada</strong>,
+      permitindo que ele conduza corrente elétrica mesmo quando está <strong>polarizado inversamente</strong> — ou seja, com o catodo ligado ao positivo e o anodo ao negativo.
+    </p>
+
+    <p>
+      O ponto mais importante é que, quando a tensão inversa atinge um certo valor (chamado de <strong>tensão Zener – Vz</strong>),
+      o diodo começa a conduzir e <strong>mantém essa tensão praticamente constante</strong>, mesmo que a corrente varie dentro de certos limites.
+    </p>
+
+    <h3>Comportamento elétrico</h3>
+    <p>
+      • Quando está <strong>polarizado diretamente</strong>, o diodo Zener se comporta como um diodo comum, com queda de tensão de aproximadamente 0,7 V.<br>
+      • Quando está <strong>polarizado inversamente</strong>, ele bloqueia a corrente até a tensão atingir o valor Vz.  
+        A partir desse ponto, o diodo conduz e mantém a tensão constante em seus terminais.
+    </p>
+
+    <p>
+      Essa característica faz com que o Zener seja muito usado como <strong>regulador de tensão</strong> — protegendo circuitos contra variações na alimentação.
+    </p>
+       <h2>Curva Característica do Diodo Zener</h2>
+    <p>
+      A curva característica mostra a relação entre a corrente (I) e a tensão (V) no diodo Zener.
+    </p>
+     <img src="img/curvacaracteristicap.png" style="filter:invert(1);">
+    <p>
+      Na polarização direta (eixo positivo de V e I), o Zener se comporta como um diodo comum, com uma queda de aproximadamente 0,7V. Na polarização inversa (eixo negativo de V e I), o diodo bloqueia a corrente até que a tensão atinja a <strong>tensão Zener (Vz)</strong>. A partir desse ponto, mesmo com variações significativas na corrente reversa (Iz), a tensão sobre o diodo permanece praticamente constante em Vz, o que o torna ideal para aplicações de regulagem de tensão. É importante notar os limites de corrente, como Izmax, para evitar danos ao componente.
+    </p>
+    <h2>3. Circuito de Polarização do Zener</h2>
+    <p>
+      Para o Zener funcionar corretamente, ele deve sempre ser utilizado com um <strong>resistor em série (Rs)</strong>.  
+      Esse resistor é responsável por limitar a corrente que passa pelo diodo, garantindo que ela permaneça dentro dos valores seguros.
+    </p>
+
+    <p>
+      As condições de funcionamento são:
+      <br>• A tensão da fonte (<strong>Vf</strong>) deve ser maior que a tensão Zener (<strong>Vz</strong>).  
+      <br>• O resistor deve limitar a corrente, evitando que o Zener seja danificado.
+    </p>
+
+    <p>
+      Assim, o diodo Zener mantém a tensão de saída estável, enquanto o resistor “absorve” as variações de corrente.
+    </p>
+
+    <h2>4. Exemplo de Cálculo</h2>
+    <p>
+      Suponha um diodo Zener 1N4733A, com <strong>tensão nominal Vz = 5,1 V</strong>.  
+      Se a fonte de alimentação fornece <strong>Vf = 12 V</strong> e o resistor de série é de <strong>Rs = 330 Ω</strong>,
+      podemos calcular a corrente que passa pelo Zener:
+    </p>
+
+    <p>
+      Iz = (Vf – Vz) / Rs  
+      <br>Iz = (12 – 5,1) / 330  
+      <br>Iz ≈ 0,021 A = 21 mA
+    </p>
+      <iframe src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDAChsaQAvBgOwYAnJgmgRx0DGDoIUeMMTlh4KZuSopY8bTvxdR4tgBMQ2WSEwpT56Vyu8Bwg20HWrti-nA0uVbLjYAN088CzxQtFCPKioaKjArGKhoBDYAdxCw0LMrOVDIdLcLDCscrKg2IA" width="50%" height="600px"></iframe>
+
+    <p>
+      Essa corrente está dentro de uma faixa segura, garantindo que o diodo mantenha sua tensão constante em 5,1 V.
+      Se diminuíssemos o valor do resistor, a corrente aumentaria — e o Zener poderia superaquecer.
+    </p>
+
+    <h2>5. Limites de Corrente e Potência</h2>
+    <p>
+      Todo diodo Zener possui uma <strong>corrente mínima (Izmin)</strong> e uma <strong>corrente máxima (Izmax)</strong>.  
+      Dentro dessa faixa, ele consegue regular a tensão corretamente.
+    </p>
+
+    <p>
+      Se a corrente for <strong>menor que Izmin</strong>, a tensão deixa de ser constante.  
+      Se for <strong>maior que Izmax</strong>, o componente aquece e pode se danificar.
+    </p>
+
+    <p>
+      A potência dissipada pelo Zener é dada por:
+      \[\huge P_z = V_z \cdot I_z \]
+    </p>
+
+    <p>
+      Por exemplo, para Vz = 5,1 V e Iz = 21 mA:
+      <br>Pz = 5,1 × 0,021 = 0,107 W  
+      <br>Isso significa que um Zener de 0,5 W suportaria essa potência com segurança.
+    </p>
+
+    <h2>6. Dimensionamento do Resistor Rs</h2>
+    <p>
+      O resistor Rs é essencial para garantir o funcionamento correto do circuito.
+      Ele deve ser calculado de forma que a corrente pelo Zener nunca ultrapasse o limite especificado no datasheet.
+    </p>
+
+    <p>
+      Primeiro, calculamos a corrente máxima permitida:
+      <br>Izmax = Pzmax / Vz
+    </p>
+
+    <p>
+      Sabendo isso, podemos determinar o menor valor de resistor que mantém o diodo dentro da faixa segura:
+      <br>Rsmin = (Vf – Vz) / Izmax
+    </p>
+
+    <p>
+      Dessa forma, mesmo que a tensão da fonte varie, o Zener continuará regulando sem exceder sua potência máxima.
+    </p>
+
+
+    <h2>Resumo Final</h2>
+    <p>
+      • O diodo Zener é usado para <strong>estabilizar tensões</strong> em circuitos eletrônicos.<br>
+      • Quando polarizado reversamente, ele mantém a tensão constante igual à sua tensão nominal (Vz).<br>
+      • É obrigatório o uso de um <strong>resistor em série (Rs)</strong> para limitar a corrente.<br>
+      • A potência dissipada deve sempre ser menor que a potência máxima (Pzmax) especificada.<br>
+      • O Zener é a base de muitos circuitos reguladores e fontes de tensão fixa.
+    </p>
+
+    <p><a href="../eletronica_analogica.php">Eletrônica Analógica</a></p>
+
+</body>
+</html>

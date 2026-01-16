@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Capacitores e Indutores</title>
+    <script type="text/javascript" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+</head>
+<body style="text-align: center;line-height: 1.6;">
+   
+
+    <h1>Capacitores e Indutores</h1>
+    <hr>
+
+    <h2>Introdução</h2>
+    <p>Vamos estudar a partir de agora mais dois componentes eletrônicos importantes: o **capacitor** e o **indutor**.</p>
+    <p>Eles são bem diferentes do **resistor** no que se refere à sua função, princípio de funcionamento e estrutura interna.</p>
+    <p>Ao contrário do resistor, estes componentes apenas exibem seu comportamento característico quando ocorrem **variações de tensão ou de corrente** no circuito em que se encontram.</p>
+    <p>Considerando os componentes ideais, eles não dissipam energia como o resistor. Eles conseguem **armazenar energia** que pode ser devolvida mais tarde ao circuito.</p>
+
+    <hr>
+
+    <h2>Tabela de Componentes Eletrônicos</h2>
+    <table border="1" style="margin: 20px auto; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="padding: 8px;">Componente</th>
+                <th style="padding: 8px;">Característica Principal</th>
+                <th style="padding: 8px;">Comportamento Elétrico</th>
+                <th style="padding: 8px;">Constituição Básica</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="padding: 8px;">**Resistor (R)**</td>
+                <td style="padding: 8px;">Resistência elétrica (Ohm - &Omega;)</td>
+                <td style="padding: 8px;">Transforma energia elétrica em calor (energia térmica)</td>
+                <td style="padding: 8px;">Material resistivo depositado sobre uma forma isolante (filme de carvão, tubo cerâmico, etc.)</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">**Capacitor (C)**</td>
+                <td style="padding: 8px;">Capacitância (Farad - F)</td>
+                <td style="padding: 8px;">Armazena energia elétrica sob a forma de **campo elétrico**</td>
+                <td style="padding: 8px;">Duas placas metálicas (armaduras) próximas e separadas por um material isolante (dielétrico)</td>
+            </tr>
+            <tr>
+                <td style="padding: 8px;">**Indutor (L)**</td>
+                <td style="padding: 8px;">Indutância (Henry - H)</td>
+                <td style="padding: 8px;">Armazena energia elétrica sob a forma de um **campo magnético**</td>
+                <td style="padding: 8px;">Porção de fio isolado enrolado em espiras (bobina ou solenóide)</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h2>Capacitores (C)</h2>
+    <p>São componentes eletrônicos que têm a capacidade de <b>armazenar energia elétrica em um campo elétrico</b>.</p>
+    <p>São basicamente formados por duas placas metálicas (armaduras) separadas por um material isolante (dielétrico).</p>
+    <p>O nome do capacitor é frequentemente associado ao seu dielétrico, como por exemplo: Papel, Poliestireno, Policarbonato, Poliéster (Mylar), Silver Mica, Cerâmico, Tântalo, Eletrolítico.</p>
+    <p>Outros tipos incluem o Bipolar, Trimmer e Variável.</p>
+
+    <hr>
+
+    <h3>Processo de Armazenamento de Energia (Carga do Capacitor)</h3>
+    <ol style="display: inline-block; text-align: left;">
+        <li>**Estado Inicial:** Sem fonte de tensão (V<sub>C</sub> = 0V), as placas são eletricamente neutras (mesmo número de prótons e elétrons em cada placa).</li>
+        <li>**Conexão à Fonte:** Ao ligar uma fonte de tensão nos terminais, há transferência de elétrons da placa conectada ao polo positivo da bateria para a placa conectada ao polo negativo.</li>
+        <li>**Armazenamento:** Quando a fonte é desligada, as cargas permanecem nas placas devido à atração mútua através do dielétrico, gerando um campo elétrico e armazenando energia (V<sub>C</sub> = V1).</li>
+    </ol>
+
+    <hr>
+
+    <h3>Capacitância (C)</h3>
+    <p>É a propriedade elétrica mais importante do capacitor. Expressa a habilidade de armazenar energia em um campo elétrico pela transferência de cargas entre as placas.</p>
+    <p>Quanto maior a capacitância, maior a carga (\(Q\)) transferida para uma mesma tensão DC (\(V\)) aplicada.</p>
+
+    <p>A capacitância é definida por: </p>
+    <p>Capacitância = carga separada e armazenada / tensão aplicada</p>
+    <p style="font-weight: bold; margin: 10px 0;">Fórmula:</p>
+        \[ \huge
+        C = \frac Q V
+        \]
+    <p>A capacitância também depende do aspecto físico (dimensões) do capacitor e do material do seu dielétrico:</p>
+    <p style="font-weight: bold; margin: 10px 0;">Fórmula:</p>
+        \[
+        \huge C = {\epsilon\cdot K\cdot A \over d}
+        \]
+    <ul style="display: inline-block; text-align: left;">
+        <li>C: capacitância em Farads (F)</li>
+        <li>&epsilon;: constante de permissividade no vácuo (8,85 x 10<sup>-12</sup> F/m)</li>
+        <li>K: constante dielétrica (propriedade do material isolante)</li>
+        <li>A: área das placas em m²</li>
+        <li>d: distância entre as placas em m</li>
+    </ul>
+
+    <hr>
+
+    <h3>Unidades de Medida de Capacitância</h3>
+    <p>A unidade básica é o **Farad (F)**, que é um valor muito alto de capacitância. Por isso, normalmente são utilizados submúltiplos:</p>
+    <table border="1" style="margin: 20px auto; border-collapse: collapse;">
+        <thead>
+            <tr>
+                <th style="padding: 8px;">Unidade</th>
+                <th style="padding: 8px;">Multiplicador</th>
+                <th style="padding: 8px;">Exemplo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td style="padding: 8px;">Farad (F)</td><td style="padding: 8px;">1</td><td style="padding: 8px;">1 F</td></tr>
+            <tr><td style="padding: 8px;">Milifarad (mF)</td><td style="padding: 8px;">10<sup>-3</sup></td><td style="padding: 8px;">12 mF = 0.012 F</td></tr>
+            <tr><td style="padding: 8px;">Microfarad (&mu;F)</td><td style="padding: 8px;">10<sup>-6</sup></td><td style="padding: 8px;">12 &mu;F = 0.000012 F</td></tr>
+            <tr><td style="padding: 8px;">Nanofarad (nF)</td><td style="padding: 8px;">10<sup>-9</sup></td><td style="padding: 8px;">12 nF = 0.000000012 F</td></tr>
+            <tr><td style="padding: 8px;">Picofarad (pF)</td><td style="padding: 8px;">10<sup>-12</sup></td><td style="padding: 8px;">12 pF = 0.000000000012 F</td></tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3>Associação de Capacitores</h3>
+
+    <h4>1. Associação Paralela</h4>
+    <p>Associar capacitores em paralelo corresponde a **aumentar a área total das placas**, e consequentemente, **aumentar a capacitância total**.</p>
+    <p>A Capacitância Equivalente (Ceq) é a soma das capacitâncias individuais:</p>
+    <p style="font-weight: bold; margin: 10px 0;">Fórmula: \(C_{eq} = C_1 + C_2 + \dots + C_n\)</p>
+
+    <h4>2. Associação Série</h4>
+    <p>A Capacitância Equivalente (Ceq) é calculada pelo inverso da soma dos inversos das capacitâncias individuais:</p>
+    <p style="font-weight: bold; margin: 10px 0;">Fórmula: \(\def\1over#1{{1 \over {#1}}} \1over{C_{eq}} = \1over{C_1} + \1over{C_2} + \dots + \1over{C_n}\)</p>
+
+    <hr>
+
+    <h2>Indutores (L)</h2>
+    <p>Um indutor é um dispositivo elétrico que **armazena energia na forma de campo magnético**.</p>
+    <p>Esse campo magnético (B) é gerado pela corrente elétrica (I) que passa pelo indutor.</p>
+    <p>É constituído basicamente de um **fio isolado enrolado de forma circular**, conhecido como **bobina** ou **solenóide**, o que concentra o campo magnético em seu interior, armazenando energia. Na maioria das vezes, utiliza-se fio esmaltado (com verniz isolante).</p>
+    <p>A representação L é em homenagem ao físico Heinrich Lenz.</p>
+    <hr>
+    <h3>Indutância e Unidade de Medida</h3>
+    <p>**Indutância** é a característica mais importante do indutor, ligada à sua capacidade de armazenar e recuperar energia através de um campo magnético.</p>
+    <p>A unidade de medida é o **Henry (H)**. Assim como o Farad, 1 H é um valor alto, e normalmente são utilizados indutores de **milihenries (mH)** ou **microhenries (&mu;H)**.</p>
+
+    <hr>
+
+    <h3>Associação de Indutores</h3>
+    <p>A associação de indutores é **igual à associação de resistores**.</p>
+
+    <h4>1. Associação Série</h4>
+    <p>A Indutância Equivalente (Leq) é a soma das indutâncias individuais:</p>
+    <p style="font-weight: bold; margin: 10px 0;">Fórmula: \(L_{eq} = L_1 + L_2 + \dots + L_n\)</p>
+
+    <h4>2. Associação Paralela</h4>
+    <p>O inverso da Indutância Equivalente (1/Leq) é a soma dos inversos das indutâncias individuais:</p>
+    <p style="font-weight: bold; margin: 10px 0;">Fórmula: \(\def\1over#1{{1 \over {#1}}} \1over{L_{eq}} = \1over{L_1} + \1over{L_2} + \dots + \1over{L_n}\)</p>
+
+    <hr>
+    <a href="../eletronica_analogica.php">Eletrônica Analógica</a>
+
+</body>
+</html>

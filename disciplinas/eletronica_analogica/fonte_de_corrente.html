@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../index.css">
+    <title>Fonte de Corrente</title>
+  <script type="text/javascript" defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+</head>
+
+<body style="text-align: center;line-height: 1.6;">
+    <h1>Circuitos Divisores de Corrente e de Tensão - Fonte de Corrente</h1>
+    <h2>MODELO MATEMÁTICO</h2>
+
+    <p>É um conjunto de símbolos, diagramas e expressões matemáticas que descrevem um fenômeno ou um sistema.</p>
+    <p>Um MODELO é uma simplificação do mundo real, logo tem limitações ao ser usado para descrever o fenômeno.</p>
+    <p>Os modelos matemáticos são utilizados praticamente em todas as áreas científicas, como, por exemplo, na biologia, química, física, economia, etc.</p>
+
+    <h3>Exemplos de Aplicação:</h3>
+    <ul style="display: inline-block; text-align: left; max-width: 900px;">
+        <li>Biologia e medicina - modelos matemáticos para estudar a transmissão de doenças infecciosas.</li>
+        <li>Química - produção de alimentos - usam soluções de simulação para reduzir os custos gerais, poupar energia, minimizar os impactos ambientais e agilizar o desenvolvimento e as operações.</li>
+    </ul>
+
+    <p>Para cada situação o importante é escolher o MODELO mais adequado que vai possibilitar uma melhor compreensão, simulação e previsão do fenômeno analisado.</p>
+
+    <hr>
+
+    <h2>Circuitos e Modelo em Eletrônica</h2>
+
+    <p>Em Eletrônica utilizamos os modelos matemáticos para descrever o comportamento elétrico de componentes e de circuitos.</p>
+
+    <h3>Fonte de Corrente</h3>
+
+    <p>Modelo matemático que representa uma <strong>fonte ideal de energia</strong> que fornece uma corrente (DC) fixa a um circuito, independente da resistência deste circuito.</p>
+
+    <p><strong>Obs.:</strong> Este tipo de fonte não é comum, normalmente é um circuito que se comporta como uma fonte de corrente mas o modelo matemático que a representa é muito utilizado em análise de circuitos.</p>
+
+    <hr>
+
+    <h2>Exemplo 1: Cálculo de Tensão em Resistores Individuais</h2>
+
+    <p><strong>Ex. 1:</strong> Calcular a queda de tensão sobre o resistor dos circuitos abaixo.</p>
+    <p>A corrente da fonte é 0,02 A. A seta indica o sentido da corrente convencional que sai da fonte.</p>
+
+    <p><strong>Cálculos de Tensão (\(V = I \cdot R\)) para I = 0,02 A:</strong></p>
+    <iframe style="border: none;"
+    src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgBLEYwkbbXjxAoUNKFFgo2AJ3DEUw0XIX9eVMHDYB3brxFiw8xWMjblfAbotqzq68JpU7pnaKr77H07Lse7z5E0uN09HY3EYSCkdGjwnS2w8MWdbJPDY9yVvWjj03ICNeE4+NP80rwkotiA"
+    width="100%" height="600"></iframe>
+
+
+    <table border="1" style="margin: 10px auto; border-collapse: collapse; width: 90%;">
+        <tr style="background:#222;">
+            <th style="padding:10px; text-align:left;">R (Ohms)</th>
+            <th style="padding:10px; text-align:left;">I (A)</th>
+            <th style="padding:10px; text-align:left;">V (V)</th>
+        </tr>
+        <tr><td style="padding:10px;">1k</td><td style="padding:10px;">0,02A</td><td style="padding:10px;">20V</td></tr>
+        <tr><td style="padding:10px;">100</td><td style="padding:10px;">0,02 A</td><td style="padding:10px;">2V</td></tr>
+        <tr><td style="padding:10px;">10k</td><td style="padding:10px;">0,02A</td><td style="padding:10px;">200V</td></tr>
+    </table>
+
+
+    <hr>
+
+    <h2>Exemplo 2: Resistores em Série com Fonte de Corrente</h2>
+
+    <p><strong>Ex. 2:</strong> Calcular a corrente e a queda de tensão sobre cada resistor e sobre a fonte de corrente.</p>
+    <p>Corrente da fonte: 0,005 A. Resistores em série: R1 = 6k8 e R2 = 2k2.</p>
+    <iframe style="border: none;"
+    src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgBLEFGq7BFN15Cqo2JARsATiGzZCI2fNkCoIQnjhsA7koX9BPPqsjS9iuQrA0aalGlO7L4G4uu3Hb10cWmgA"
+    width="100%" height="600"></iframe>
+
+    <p><strong>Cálculo de V1 (queda de tensão em R1):</strong></p>
+    <p>V1 = 6,8 × 10^-3 × 5 × 10^-3 = 34 V</p>
+
+    <p><strong>Cálculo de V2 (queda de tensão em R2):</strong></p>
+    <p>V2 = 2,2 × 10^-3 × 5 × 10^-3 = 11 V</p>
+
+    <p><strong>Cálculo da Tensão da Fonte (VF):</strong></p>
+    <p>VF = V1 + V2 = 45 V</p>
+
+
+    <hr>
+
+    <h2>Exemplo 3: Resistores em Série e Paralelo com Fonte de Corrente</h2>
+
+    <p><strong>Ex. 3:</strong> Calcular a corrente em cada resistor e queda de tensão.</p>
+    <p>Corrente da fonte IF = 0,002 A. Resistores: 1k8 em série com o paralelo de 8k2 e 3k3.</p>
+	 <iframe style="border: none;"
+    src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgBLEFGq7BFN15Cqo2JBRsATiGzZCI2fNkCoIAnDYB3JQv6CefVZGm7FchWBo01YPJp0Xw1xVZsmdh5za9ePZrxowBT9tM31aYJVBExkgkOF46LU5TSA"
+    width="100%" height="600"></iframe>
+    <p>Resistência equivalente do paralelo: 8k2 // 3k3 ≈ 2k35 Ω.</p>
+
+    <p><strong>Cálculo das tensões:</strong></p>
+    <p>V1 (em 1k8) = IF × 1800 = 2 × 10^-3 × 1800 = 3,6 V</p>
+    <p>V2 (no paralelo) = IF × 2350 = 2 × 10^-3 × 2350 = 4,7 V</p>
+    <p>VF (tensão da fonte) = V1 + V2 = 8,3 V</p>
+
+    <p><strong>Cálculo das correntes no paralelo:</strong></p>
+    <p>I1 (em 8k2) = V2 / 8k2 ≈ 573 μA</p>
+    <p>I2 (em 3k3) = V2 / 3k3 ≈ 1,42 mA</p>
+
+    <hr>
+
+    <h2>Circuito Paralelo</h2>
+
+    <p>Componentes de um circuito estão em <strong>paralelo</strong> quando têm dois pontos em comum.</p>
+
+    <h3>Características:</h3>
+    <ul style="display: inline-block; text-align: left; max-width: 900px;">
+        <li>A tensão é igual sobre cada componente do circuito.</li>
+        <li>A corrente se divide entre os resistores. A maior corrente circula no menor resistor (valor ôhmico).</li>
+        <li>A maior potência é dissipada no menor resistor (valor ôhmico).</li>
+    </ul>
+
+    <h3>Exemplo de Circuito Paralelo com Divisão de Corrente</h3>
+
+    <p>Corrente da fonte: IF = 50 mA. Resistores em paralelo: 1k Ω, 2k Ω e 500 Ω.</p>
+	 <iframe style="border: none;"
+    src="https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWcMBMcUHYMGZIA4UA2ATmIxAUgpABZsKBTAWjDACgBLcGmkbNbrzR4oUWAjYAnEMJkoh+PgKph4UmRhRyhmpVSpo46-gfl7zVSpDYB3QTMWzZ1u08eOzLhyKe7ntjS1fIM8AzCDFE28oAKjZONC7KLjdKK9w83jlMMiBMB4LNiA"
+    width="100%" height="600"></iframe>
+    <p>Resistência Equivalente: Req = 285,7 Ω.</p>
+    <p>Tensão da Fonte: VF = IF × Req ≈ 14,29 V.</p>
+
+    <p><strong>Cálculos de Corrente e Potência por Resistor (VF ≈ 14,29 V):</strong></p>
+
+    <table border="1" style="margin: 10px auto; border-collapse: collapse; width: 90%;">
+        <tr style="background:#222;">
+            <th style="padding:10px; text-align:left;">R (Ohms)</th>
+            <th style="padding:10px; text-align:left;">V (V)</th>
+            <th style="padding:10px; text-align:left;">I (A)</th>
+            <th style="padding:10px; text-align:left;">P (W)</th>
+        </tr>
+        <tr><td style="padding:10px;">1k</td><td style="padding:10px;">14,29 V</td><td style="padding:10px;">14,29 mA</td><td style="padding:10px;">204 mW</td></tr>
+        <tr><td style="padding:10px;">2k</td><td style="padding:10px;">14,29 V</td><td style="padding:10px;">7,15 mA</td><td style="padding:10px;">102 mW</td></tr>
+        <tr><td style="padding:10px;">500</td><td style="padding:10px;">14,29 V</td><td style="padding:10px;">28,57 mA</td><td style="padding:10px;">408 mW</td></tr>
+    </table>
+
+    <hr>
+
+    <h2>Divisor de Corrente</h2>
+
+    <p>Fórmulas do Divisor de Corrente (para dois resistores em paralelo R1 e R2 com corrente de fonte If):</p>
+    <img src="img/circuitoslac.png" alt="Circuito"
+	style="display:block; margin:30px auto; max-width:80%; filter: invert(1);">
+    <p>Corrente em R1 (i1):</p>
+    \[\def\1over#1{{1 \over {#1}}}
+    i_1 = I_f \cdot {{\1over{R_1}} \over {\1over{R_1} + \1over{R_2}}}
+    \]
+    <p>Corrente em R2 (i2):</p>
+    \[\def\1over#1{{1 \over {#1}}}
+    i_2 = I_f \cdot {{\1over{R_2}} \over {\1over{R_1} + \1over{R_2}}}
+    \]
+    <hr>
+        <a href="../eletronica_analogica.php">Voltar para Eletrônica Analógica</a>
+</body>
+</html>
