@@ -9,7 +9,7 @@ Link: https://arquivo-tartaro.byethost12.com/
 - HTML
 - CSS
 - PHP (`config.php` inavaliable due to security reasons)
-- JS
+- JS (embedded for source code)
 
 ## Features
 - Two disciplines: "Eletrônica Analógica" (Analog Eletronics) & "Programação" (Programming).
