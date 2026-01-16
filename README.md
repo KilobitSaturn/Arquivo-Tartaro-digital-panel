@@ -1,5 +1,5 @@
 # Arquivo-Tartaro-digital-panel
-"Arquivo Tártaro" is a collection of online pages that provides teaching materials from the electronics course, aiming to support students using web resources. It was created by a pair of students from said course (including myself!). This project aims to facilitate the access and the organization of said materials through the internet.
+"Arquivo Tártaro" is a collection of online pages that provides teaching materials from the electronics course, aiming to support students using web resources. It was created by a pair of students from said course (including myself!). This project aims to facilitate the access and the organization of said materials through the internet. Hosting made with Byethost.
 
 <mark>For now, the pages are only available in Portuguese.</mark>
 
@@ -18,4 +18,3 @@ Link: https://arquivo-tartaro.byethost12.com/
 - Inline and block equations using `LaTeX` language suported by `MathJax`.
 - Responsive elements using CSS.
 - Everlasting Dark mode!
-- Hosting made with Byethost
