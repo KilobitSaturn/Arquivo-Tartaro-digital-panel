@@ -8,7 +8,7 @@ Link: https://arquivo-tartaro.byethost12.com/
 ## Languagues Used for Structure
 - HTML
 - CSS
-- PHP (`config.php` inavaliable due to security reasons)
+- PHP (`config.php` unavaliable due to security reasons)
 - JS (embedded for source code)
 
 ## Features
